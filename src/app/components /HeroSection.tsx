@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Button from './Button'; // Assuming Button component exists
 import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import Slider from './Slider';
 
 type HeroSectionProps = {
   backgroundImage?: string;
@@ -19,17 +19,6 @@ type HeroSectionProps = {
   logoImages?: { src: string; alt: string }[]; // Array of logo images for the bottom section
 };
 
-const defaultLogos = [
-  { src: '/logos/wave-movers.png', alt: 'wave-movers' },
-  { src: '/logos/first-cry.png', alt: 'Logo 2' },
-  { src: '/logos/ai-invento.png', alt: 'Logo 3' },
-  { src: '/logos/techbiz.png', alt: 'Logo 4' },
-  { src: '/logos/global.png', alt: 'Logo 5' },
-  { src: '/logos/macro-world.png', alt: 'Logo 6' },
-  { src: '/logos/gateway.png', alt: 'Logo 7' },
-  { src: '/logos/excel.png', alt: 'Logo 8' },
-];
-
 const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   paragraphText1,
@@ -40,28 +29,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   buttonLabel,
   logoTitle,
   onButtonClick,
-  logoImages = defaultLogos,
 }) => {
   const router = useRouter();
   const handleClick = (route: string) => {
     router.push(route); // Navigate programmatically to the route
   };
 
-  const scrollingVariants = {
-    animate: {
-      x: ['0%', '-100%'], // Start outside the right and end outside the left
-      transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: 'loop',
-          duration: 20, // Duration for one full scroll cycle
-          ease: 'linear',
-        },
-      },
-    },
-  };
-
-  const duplicatedLogos = [...logoImages, ...logoImages];
 
   return (
     <section
@@ -104,7 +77,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </h1>
 
         {/* Paragraph 2 */}
-        <p className="text-white font-normal text-[18px] sm:text-[20px] lg:text-[24px] mb-6 w-[46rem]">
+        <p className="text-white font-normal text-[18px] sm:text-[20px] lg:text-[24px] mb-4 w-[46rem]">
           {paragraphText2}
         </p>
 
@@ -113,20 +86,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Logo Section */}
-      <div className='absolute bottom-0 left-0 w-full h-[150px] bg-black bg-opacity-50'>
-        <div className='flex flex-col items-center justify-center h-full w-full gap-[10px]'>
-          <h3 className='text-white text-center'>{logoTitle}</h3>
-          <motion.div 
-            className='flex justify-start items-center w-[150%] gap-6' 
-            variants={scrollingVariants} 
-            animate="animate"
-          >
-            {duplicatedLogos.map((logo, index) => (
-              <div key={`${logo.src}-${index}`} className='bg-white w-[150px] h-[70px] px-4 py-0 flex items-center justify-center mb-6 rounded-[10px]'>
-                <Image src={logo.src} alt={logo.alt} width={165} height={30} />
-              </div>
-            ))}
-          </motion.div>
+      <div className='absolute bottom-0 left-0 w-full h-[160px] bg-black bg-opacity-50'>
+        <div className='flex flex-col items-center justify-center h-full w-full gap-[2px]'>
+          <h3 className='text-white text-center mt-4'>{logoTitle}</h3>
+          <Slider />
         </div>
       </div>
     </section>

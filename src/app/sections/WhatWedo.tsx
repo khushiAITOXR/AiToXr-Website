@@ -180,12 +180,12 @@ const ServiceCard = () => {
       <div className="flex justify-center">
         {/* Left - List of Services */}
         <div className=" bg-[#f5f5f5] rounded-l-lg w-[45%]"
-        style={{ position: 'relative', left: '15px', zIndex: '0', borderRadius:'1.25rem 0rem 0rem 1.25rem', width:"50%"}} 
+        style={{ position: 'relative', left: '17px', zIndex: '0', borderRadius:'1.25rem 0rem 0rem 1.25rem', width:"50%"}} 
         >
           {serviceItems.map((service) => (
             <div
               key={service.id}
-              className={`flex justify-between items-center px-8 py-[1.5rem] cursor-pointer text-[1.5rem] ${
+              className={`flex justify-between items-center pl-8 pr-12 py-[1.5rem] cursor-pointer text-[1.5rem] ${
                 selectedService === service.id ? 'bg-gr-start text-white' : 'bg-transparent text-black border-black'
               }`}
               onClick={() => handleSelectService(service.id)}

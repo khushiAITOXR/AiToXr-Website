@@ -105,19 +105,19 @@ const Dropdown: React.FC<DropdownProps> = ({
             description="Our software developers in your team."
             />
             <SubItemList
-            onClick={() => handleClick('/web-dev')}
+            onClick={() => handleClick('/web-development')}
             heading="Web Development"
             description="Our software developers in your team."
             />
             <SubItemList
-            onClick={() => handleClick('/gen-ai')}
+            onClick={() => handleClick('/generative-ai')}
             heading="Generative AI/LLM Development"
             description="Our software developers in your team."
             />
           </div>
           <div className='flex flex-col items-center gap-5'>
             <SubItemList
-            onClick={() => handleClick('/app-dev')}
+            onClick={() => handleClick('/app-devevelopment')}
             heading="App Development"
             description="Our software developers in your team."
             />

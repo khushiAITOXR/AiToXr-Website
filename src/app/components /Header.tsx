@@ -46,6 +46,10 @@ import { useRouter } from 'next/navigation';
     }
   };
 
+  const redirectToHome = () => {
+    router.push('/'); // Redirect to home when clicked
+  };
+
   return (
    <> 
     <header 
@@ -56,7 +60,7 @@ import { useRouter } from 'next/navigation';
     }`}
     >
       {/* Logo */}
-      <div className="flex items-center">
+      <div className="flex items-center hover:cursor-pointer" onClick={redirectToHome}>
         <Image src='/logo.svg' alt="aitoxr-logo" width={165} height={30} />
       </div>
 
