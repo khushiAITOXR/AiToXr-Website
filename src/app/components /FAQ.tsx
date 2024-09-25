@@ -24,26 +24,40 @@ const FAQ: React.FC<FAQProps> = ({ question, answer, isOpen, onToggle }) => {
   }, [isOpen]);
 
   return (
-    <div
-      className={`border-b-3 border-l-3 border-r-3 border-transparent border-b border-b-[#E45D25] rounded-[50px] p-6 my-4 shadow-[0px_1px_1px_rgb(228,93,37),0px_0px_0px_rgb(228,93,37),0px_0px_0px_rgb(228,93,37)]`}
-    >
-      {/* Question */}
+    <div className="relative my-4" style={{ padding: '3px', borderRadius: '50px' }}>
+      {/* Background gradient div */}
       <div
-        className="flex justify-between items-center cursor-pointer"
-        onClick={onToggle}
-      >
-        <h3 className="text-[#1E1E1E] font-medium text-lg">
-          {question}
-        </h3>
-        {isOpen ? (
-          <FiChevronUp className="text-[#E45D25] text-2xl" />
-        ) : (
-          <FiChevronDown className="text-[#E45D25] text-2xl" />
-        )}
-      </div>
+        className="absolute inset-0 rounded-[50px] z-0"
+        style={{
+          background: "linear-gradient(360deg, #E45D25 0%, rgba(245, 142, 30, 0) 74.03%)",
+          borderRadius: "50px",
+          // padding: "3px"
+        }}
+      ></div>
 
-      {/* Answer */}
-      {isOpen && (
+      {/* Main content div */}
+      <div
+        className="relative z-10 bg-white rounded-[47.5px] p-6"
+        style={{
+          boxSizing: "border-box",
+        }}
+      >
+        {/* Question */}
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={onToggle}
+        >
+          <h3 className="text-[#1E1E1E] font-medium text-lg">
+            {question}
+          </h3>
+          {isOpen ? (
+            <FiChevronUp className="text-[#E45D25] text-2xl" />
+          ) : (
+            <FiChevronDown className="text-[#E45D25] text-2xl" />
+          )}
+        </div>
+
+        {/* Answer */}
         <div
           ref={answerRef} // Reference to the answer div for dynamic height
           style={{
@@ -51,11 +65,11 @@ const FAQ: React.FC<FAQProps> = ({ question, answer, isOpen, onToggle }) => {
             overflow: 'hidden', // Hide overflow
             transition: 'max-height 0.3s ease-in-out', // Smooth transition for max-height
           }}
-          className="mt-4 text-[#1E1E1E] text-base"
+          className={`text-[#1E1E1E] text-base ${isOpen ? 'mt-6' : 'mt-0'}`}
         >
           {answer}
         </div>
-      )}
+      </div>
     </div>
   );
 };
