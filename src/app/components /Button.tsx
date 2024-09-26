@@ -30,18 +30,35 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'defau
     bg-gradient-to-r from-gr-start to-gr-end 
   `.replace(/\s+/g, ' ').trim();
 
-  // Inline styles for hover effect (applied only in the default variant)
-  const inlineHoverStyle = isHovered && variant === 'default'
-    ? {
-        background: 'linear-gradient(to right, #E45D25, #F58E1E)', // Full gradient background when hovered
-        color: '#FFFFFF',
-        boxShadow: 'inset 0 0 0 2px transparent', // Remove the "border" effect on hover
-        transition: 'all 0.3s ease-in-out', // Smooth transition
-      }
-    : {
-        boxShadow: 'inset 0 0 0 2px #E45D25', // Simulate the border using inset box-shadow
-        transition: 'all 0.3s ease-in-out', // Smooth transition
-      };
+  // // Inline styles for hover effect (applied only in the default variant)
+  // const inlineHoverStyle = isHovered && variant === 'default'
+  //   ? {
+  //       background: 'linear-gradient(to right, #E45D25, #F58E1E)', // Full gradient background when hovered
+  //       color: '#FFFFFF',
+  //       boxShadow: 'inset 0 0 0 2px transparent', // Remove the "border" effect on hover
+  //       transition: 'all 0.3s ease-in-out', // Smooth transition
+  //     }
+  //   : {
+  //       boxShadow: 'inset 0 0 0 2px #E45D25', // Simulate the border using inset box-shadow
+  //       transition: 'all 0.3s ease-in-out', // Smooth transition
+  //     };
+
+  const inlineHoverStyle =
+    variant === 'default'
+      ? isHovered
+        ? {
+            background: 'linear-gradient(to right, #E45D25, #F58E1E)', // Full gradient background when hovered
+            color: '#FFFFFF',
+            boxShadow: 'inset 0 0 0 2px transparent', // Remove the "border" effect on hover
+            transition: 'all 0.3s ease-in-out', // Smooth transition
+          }
+        : {
+            boxShadow: 'inset 0 0 0 2px #E45D25', // Simulate the border using inset box-shadow
+            transition: 'all 0.3s ease-in-out', // Smooth transition
+          }
+      : {
+          boxShadow: 'none', // Remove box-shadow if the variant is "fill"
+        };
 
   // Determine which classes to apply based on the variant prop
   const variantClasses = variant === 'default' ? defaultClasses : fillClasses;
