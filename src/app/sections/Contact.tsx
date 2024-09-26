@@ -5,13 +5,13 @@ import Button from '../components /Button';
 import ContactCard from '../components /ContactCard';
 
 const Office1 = 'INDIA'
-const mainAddress1 = 'B-24, Sector - 123, Near School, ';
-const additionalAddress1 ='Noida, Delhi - 103342';
-const phoneNumber1 = '+91 9876-082332';
+const mainAddress1 = '624 New Dahsmesh Nagar Tehsil';
+const additionalAddress1 ='Road, Zirakpur, SAS Nagar,';
+const phoneNumber1 = 'Mohali, Punjab';
 
 const Office2 = 'CANADA'
-const mainAddress2 = 'B-24, Sector - 123, Near School, ';
-const additionalAddress2 ='Noida, Delhi - 103342';
+const mainAddress2 = '26 Matthews Gate,  Mississauga';
+const additionalAddress2 ='ON L5B 3C4, Canada';
 const phoneNumber2 = '+91 9876-082332';
 
 const Office3 = 'USA'
@@ -83,7 +83,9 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
             <div className="w-full h-full flex-col justify-between items-center space-y-4">
               <ContactCard
                 image="/india.svg" // Use a valid path from your public folder
+                hoverImage='/india_white.svg'
                 heading={Office1}
+                hoverEffect
                 contactDetail={{
                   mainAddress: mainAddress1,
                   additional: additionalAddress1,
@@ -92,8 +94,10 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
               />
 
                 <ContactCard
-                image="/india.svg" // Use a valid path from your public folder
+                image="/canada.svg" // Use a valid path from your public folder
+                hoverImage='/canada_white.svg'
                 heading={Office2}
+                hoverEffect
                 contactDetail={{
                   mainAddress: mainAddress2,
                   additional: additionalAddress2,
@@ -101,8 +105,10 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
                 }}
               />
                <ContactCard
-                image="/india.svg" // Use a valid path from your public folder
+                image="/us.svg" // Use a valid path from your public folder
+                hoverImage='/usa_white.svg'
                 heading={Office3}
+                hoverEffect
                 contactDetail={{
                   mainAddress: mainAddress3,
                   additional: additionalAddress3,
