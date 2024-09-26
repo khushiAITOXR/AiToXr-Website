@@ -20,6 +20,7 @@ import { useRouter } from 'next/navigation';
 
   const closeDropdown = () => {
     setIsDropdownOpen(false); // Function to close the dropdown
+    setActiveLink(null);
   };
 
 

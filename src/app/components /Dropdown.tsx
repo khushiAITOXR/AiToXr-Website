@@ -52,11 +52,10 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div
     ref={dropdownRef}
-    className={`absolute w-[90%] left-[5%] h-auto py-8 rounded-b-[1.25rem] border border-white/50 bg-black/60 backdrop-blur-[20px] z-40 flex transition-all duration-[3s] ease-in-out ${
+    className={`absolute w-[90%] left-[5%] h-auto py-8 rounded-b-[1.25rem] border border-white/50 bg-black/60 backdrop-blur-[20px] z-50 flex transition-all duration-[3s] ease-in-out ${
        isOpen ? 'animate-slideDown' : 'animate-slideUp'
     }`}
-    style={{ top: isOpen ? "4.5rem" : "-100%", borderRadius: '0rem 0rem 1.25rem 1.25rem', position: 'sticky', // Keep dropdown sticky to the top
-      zIndex: 1000 }}
+    style={{ top: isOpen ? "4.5rem" : "-100%", borderRadius: '0rem 0rem 1.25rem 1.25rem', position:'fixed'}}
     >
       <div className="w-[35%] flex-col items-center justify-center">
         <div className="text-center mb-6 flex flex-col items-center">
