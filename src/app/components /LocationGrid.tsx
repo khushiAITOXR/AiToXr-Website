@@ -4,13 +4,13 @@ import Image from 'next/image';
 const locations = [
   {
     src: '/india.svg', // Image path
-    title: 'INDIA HQ',
-    address: '25B, Sector- 123, Near IT Park, Noida, Uttar Pradesh, India - 1232323',
+    title: 'INDIA',
+    address: '624 New Dahsmesh Nagar Tehsil Road, Zirakpur, SAS Nagar, Mohali, Punjab',
   },
   {
     src: '/us.svg', // Image path
     title: 'USA',
-    address: '25B, Sector- 123, Near IT Park, Noida, Uttar Pradesh, India - 1232323',
+    address: '26 Matthews Gate, Mississauga ON L5B 3C4, Canada',
   },
   {
     src: '/canada.svg', // Image path

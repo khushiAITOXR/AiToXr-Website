@@ -9,11 +9,14 @@ import { useRouter } from 'next/navigation';
   const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState<string | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev); // Toggle dropdown state
+    setActiveLink('services'); // Set 'services' as active when dropdown is toggled
   };
+
 
   const closeDropdown = () => {
     setIsDropdownOpen(false); // Function to close the dropdown
@@ -37,13 +40,17 @@ import { useRouter } from 'next/navigation';
   }, []);
 
   const router = useRouter();
-  const handleClick = (route: string) => {
-    router.push(route); // Navigate programmatically to the route
-  };
   const handleScrollToContact = () => {
     if (contactRef.current) {
       contactRef.current.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  // Function to handle navigation and close dropdown when other links are clicked
+  const handleClick = (route: string, linkName: string) => {
+    setActiveLink(linkName); // Set the clicked link as active
+    closeDropdown(); // Close the dropdown if open
+    router.push(route); // Navigate programmatically to the route
   };
 
   const redirectToHome = () => {
@@ -66,13 +73,59 @@ import { useRouter } from 'next/navigation';
 
       {/* Navigation */}
       <nav className="text-white gap-16 flex">
-        <a onClick={toggleDropdown} className="hover:text-[#E45D25] active:text-[#E45D25] cursor-pointer">Services</a>
-        <a href="#products" className="hover:text-[#E45D25] cursor-pointer">Products</a>
-        <a href="#industries" className="hover:text-[#E45D25] cursor-pointer">Industries</a>
-        <a href="#company" className="hover:text-[#E45D25] cursor-pointer">Company</a>
-        <a onClick={() => handleClick('/insights')} className="hover:text-[#E45D25] cursor-pointer">Insights</a>
-        <a href="#career" className="hover:text-[#E45D25] cursor-pointer">Career</a>
-      </nav>
+          <a
+            onClick={toggleDropdown}
+            className={`cursor-pointer ${
+              activeLink === 'services' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
+            }`}
+          >
+            Services
+          </a>
+          <a
+            href="#products"
+            onClick={() => setActiveLink('products')}
+            className={`cursor-pointer ${
+              activeLink === 'products' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
+            }`}
+          >
+            Products
+          </a>
+          <a
+            href="#industries"
+            onClick={() => setActiveLink('industries')}
+            className={`cursor-pointer ${
+              activeLink === 'industries' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
+            }`}
+          >
+            Industries
+          </a>
+          <a
+            href="#company"
+            onClick={() => setActiveLink('company')}
+            className={`cursor-pointer ${
+              activeLink === 'company' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
+            }`}
+          >
+            Company
+          </a>
+          <a
+            onClick={() => handleClick('/insights', 'insights')}
+            className={`cursor-pointer ${
+              activeLink === 'insights' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
+            }`}
+          >
+            Insights
+          </a>
+          <a
+            href="#career"
+            onClick={() => setActiveLink('career')}
+            className={`cursor-pointer ${
+              activeLink === 'career' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
+            }`}
+          >
+            Career
+          </a>
+        </nav>
 
       {/* Button */}
       <Button variant="fill" label="Schedule a Call" onClick={handleScrollToContact} />

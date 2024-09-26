@@ -74,7 +74,7 @@ const Industry = forwardRef<HTMLElement, object>((_, ref) => {
 
       {/* Grid Section */}
       <div className="mx-auto w-[80%]">
-        <Grid rows={2} columns={6} items={items} />
+        <Grid rows={2} columns={6} items={items} defaultOpacity={1}/>
       </div>
     </section>
   );
