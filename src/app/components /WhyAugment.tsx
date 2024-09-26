@@ -54,7 +54,7 @@ const WhyAugment = forwardRef<HTMLElement, object>((_, ref) => {
   return (
     <section ref={ref} className="py-16 bg-[#F3F3F3]">
       {/* Title */}
-      <h2 className="text-center text-3xl font-bold leading-[145%] mb-8">
+      <h2 className="text-center text-5xl font-bold leading-[145%] mb-8">
         {title.split(highlightedTitlePart)[0]}
         <span className="text-[#E45D25]">{highlightedTitlePart}</span>
       </h2>

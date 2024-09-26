@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import SubItemList from './SubItemList';
 import { useRouter } from 'next/navigation';
 
@@ -21,6 +21,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   isOpen,
   closeDropdown
 }) => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const router = useRouter();
   const handleClick = (route: string) => {
@@ -28,13 +29,34 @@ const Dropdown: React.FC<DropdownProps> = ({
     closeDropdown();
   };
 
+  // Handle click outside to close the dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        closeDropdown(); // Close dropdown if clicked outside
+      }
+    };
+
+    // Add the event listener when the dropdown is open
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      // Remove the event listener when the dropdown is closed
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, closeDropdown]);
+
 
   return (
     <div
+    ref={dropdownRef}
     className={`absolute w-[90%] left-[5%] h-auto py-8 rounded-b-[1.25rem] border border-white/50 bg-black/60 backdrop-blur-[20px] z-40 flex transition-all duration-[3s] ease-in-out ${
        isOpen ? 'animate-slideDown' : 'animate-slideUp'
     }`}
-    style={{ top: isOpen ? "4.5rem" : "-100%", borderRadius: '0rem 0rem 1.25rem 1.25rem' }}
+    style={{ top: isOpen ? "4.5rem" : "-100%", borderRadius: '0rem 0rem 1.25rem 1.25rem', position: 'sticky', // Keep dropdown sticky to the top
+      zIndex: 1000 }}
     >
       <div className="w-[35%] flex-col items-center justify-center">
         <div className="text-center mb-6 flex flex-col items-center">
@@ -105,19 +127,19 @@ const Dropdown: React.FC<DropdownProps> = ({
             description="Our software developers in your team."
             />
             <SubItemList
-            onClick={() => handleClick('/web-dev')}
+            onClick={() => handleClick('/web-development')}
             heading="Web Development"
             description="Our software developers in your team."
             />
             <SubItemList
-            onClick={() => handleClick('/gen-ai')}
+            onClick={() => handleClick('/generative-ai')}
             heading="Generative AI/LLM Development"
             description="Our software developers in your team."
             />
           </div>
           <div className='flex flex-col items-center gap-5'>
             <SubItemList
-            onClick={() => handleClick('/app-dev')}
+            onClick={() => handleClick('/app-devevelopment')}
             heading="App Development"
             description="Our software developers in your team."
             />

@@ -57,7 +57,7 @@ const Testimonials = forwardRef<HTMLElement, object>((_, ref) => {
         <button onClick={handlePrev} className="mr-4">
           <Image src="/prev-icon.svg" alt="Prev" width={40} height={40} />
         </button>
-        <h2 className="text-center text-3xl font-bold text-[#1E1E1E]">
+        <h2 className="text-center text-5xl font-bold text-[#1E1E1E]">
           Client <span className="text-[#E45D25]">Testimonials</span>
         </h2>
         <button onClick={handleNext} className="ml-4">

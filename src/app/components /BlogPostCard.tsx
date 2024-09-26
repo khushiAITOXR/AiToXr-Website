@@ -30,16 +30,15 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ bgImage, topic, type = 'blo
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center p-4">
+      <div className="absolute inset-0 flex flex-col justify-end items-center p-4 pb-10">
       {type === 'blog' ? (
           <>
             {/* Blog Topic */}
-            <h2 className="text-white text-center text-[1.875rem] font-medium leading-[145%] mb-6">
+            <h2 className="text-white text-center text-[28px] font-medium leading-[145%] mb-6">
               {topic}
             </h2>
             {/* Read More Button */}
             <Button
-              variant="fill"
               label="Read Here"
               style={{ paddingLeft: '36px', paddingRight: '36px' }}
               onClick={() => alert('Read More clicked!')}

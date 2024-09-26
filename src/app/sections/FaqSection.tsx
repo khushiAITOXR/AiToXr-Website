@@ -20,7 +20,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ faqItems, customStyles }) => {
     <section className="w-full py-20 bg-white" style={customStyles}>
       <div className="max-w-7xl w-full px-6 mx-auto">
         {/* Section Title */}
-        <h2 className="text-center text-[#1E1E1E] font-bold text-3xl mb-10">
+        <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-10">
           Frequently Asked <span className="text-[#E45D25]">Questions</span>
         </h2>
 

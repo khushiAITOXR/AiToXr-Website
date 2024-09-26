@@ -22,7 +22,7 @@ const SolutionsSection = forwardRef<HTMLElement, SolutionsSectionProps>(
   return (
     <section ref={ref} style={sectionStyle} className="py-16 m-auto bg-[#F3F3F3] px-50">
       {/* Section Heading */}
-      <h2 className="text-3xl font-bold text-center mb-12">
+      <h2 className="text-5xl font-bold text-center mb-12">
         {sectionTitle.split(highlightedTitlePart)[0]}
         <span className="text-[#E45D25]"> {highlightedTitlePart} </span>
         {sectionTitle.split(highlightedTitlePart)[1]}

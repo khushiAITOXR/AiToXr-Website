@@ -68,13 +68,13 @@ const Industry = forwardRef<HTMLElement, object>((_, ref) => {
   return (
     <section ref={ref} className="p-8 py-16">
       {/* Section Title */}
-      <h2 className="text-center text-[#1E1E1E] font-bold text-3xl mb-16">
+      <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
         Industries We <span className="text-[#E45D25]">Serve</span>
       </h2>
 
       {/* Grid Section */}
       <div className="mx-auto w-[80%]">
-        <Grid rows={2} columns={6} items={items} />
+        <Grid rows={2} columns={6} items={items} defaultOpacity={1}/>
       </div>
     </section>
   );

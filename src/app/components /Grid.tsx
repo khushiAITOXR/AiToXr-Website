@@ -10,9 +10,10 @@ type GridProps = {
     label?: string; // Optional label for the image
     imageSize?: number; // Optional size for the image
   }[];
+  defaultOpacity?: number; // New prop to set the default opacity of the images
 };
 
-const Grid: React.FC<GridProps> = ({ rows, columns, items }) => {
+const Grid: React.FC<GridProps> = ({ rows, columns, items, defaultOpacity = 0.3 }) => {
   // Create grid styles dynamically
   const gridStyle = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -32,9 +33,20 @@ const Grid: React.FC<GridProps> = ({ rows, columns, items }) => {
           <Image
             src={item.src}
             alt={item.alt}
-            width={item.imageSize || 60} // Default size to 100px if not provided
+            width={item.imageSize || 60} // Default size to 60px if not provided
             height={item.imageSize || 60}
-            className="mb-6 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+            className="mb-6 grayscale transition-all duration-500"
+            style={{
+              opacity: defaultOpacity, // Use the defaultOpacity prop for initial opacity
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = '1';
+              (e.currentTarget as HTMLElement).style.filter = 'grayscale(0)';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = `${defaultOpacity}`;
+              (e.currentTarget as HTMLElement).style.filter = 'grayscale(100%)';
+            }}
           />
 
           {/* Label Section */}
