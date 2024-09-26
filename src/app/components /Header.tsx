@@ -66,12 +66,12 @@ import { useRouter } from 'next/navigation';
 
       {/* Navigation */}
       <nav className="text-white gap-16 flex">
-        <a onClick={toggleDropdown} className="hover:text-gray-300 cursor-pointer">Services</a>
-        <a href="#products" className="hover:text-gray-300 cursor-pointer">Products</a>
-        <a href="#industries" className="hover:text-gray-300 cursor-pointer">Industries</a>
-        <a href="#company" className="hover:text-gray-300 cursor-pointer">Company</a>
-        <a onClick={() => handleClick('/insights')} className="hover:text-gray-300 cursor-pointer">Insights</a>
-        <a href="#career" className="hover:text-gray-300 cursor-pointer">Career</a>
+        <a onClick={toggleDropdown} className="hover:text-[#E45D25] active:text-[#E45D25] cursor-pointer">Services</a>
+        <a href="#products" className="hover:text-[#E45D25] cursor-pointer">Products</a>
+        <a href="#industries" className="hover:text-[#E45D25] cursor-pointer">Industries</a>
+        <a href="#company" className="hover:text-[#E45D25] cursor-pointer">Company</a>
+        <a onClick={() => handleClick('/insights')} className="hover:text-[#E45D25] cursor-pointer">Insights</a>
+        <a href="#career" className="hover:text-[#E45D25] cursor-pointer">Career</a>
       </nav>
 
       {/* Button */}

@@ -6,8 +6,8 @@ const BlogPost: React.FC = () => {
     <section className="w-full py-16 bg-[#F3F3F3]">
       <div className="max-w-7xl w-full px-6 mx-auto">
         {/* Section Title */}
-        <h2 className="text-center text-[#1E1E1E] font-bold text-3xl">
-          Blog <span className="text-[#E45D25]">Post</span>
+        <h2 className="text-center text-[#1E1E1E] font-bold text-5xl">
+          Insights
         </h2>
 
         {/* Blog Post Cards */}

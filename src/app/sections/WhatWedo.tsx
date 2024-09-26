@@ -172,7 +172,7 @@ const ServiceCard = () => {
 
   return (
     <div className="w-full max-w-7xl mx-auto py-16 bg-white">
-      <h2 className="text-center text-[#1E1E1E] font-bold text-3xl mb-16">
+      <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
         What We <span className="text-[#E45D25]">Do?</span>
       </h2>
 

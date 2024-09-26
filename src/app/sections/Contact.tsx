@@ -24,7 +24,7 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
     <section ref={ref} className="w-full py-16 h-[880px] flex justify-center items-start bg-white">
       <div className="max-w-7xl w-full px-6">
         {/* Section Title */}
-        <h2 className="text-center text-[#1E1E1E] font-bold text-3xl">
+        <h2 className="text-center text-[#1E1E1E] font-bold text-5xl">
           Contact <span className="text-[#E45D25]">Us</span>
         </h2>
 

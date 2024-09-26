@@ -4,7 +4,7 @@ import Card from '../components /Card';
 const WhoWeHelp: React.FC = () => {
   return (
     <section className="p-16 bg-white">
-      <h2 className="text-center text-[#1E1E1E] font-bold text-3xl mb-12">
+      <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-12">
         Who Can We <span className="text-[#E45D25]">Help</span>
       </h2>
 

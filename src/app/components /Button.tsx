@@ -1,65 +1,6 @@
-// 'use client'; // This marks the component as a Client Component
-
-// import React from 'react';
-
-// type ButtonProps = {
-//   label: string;
-//   onClick?: () => void;
-//   style?: React.CSSProperties;
-//   variant?: 'default' | 'outline'; // 'default' as outline, 'outline' as alternative style
-// };
-
-// const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'default' }) => {
-//   // Base styles applied to all variants
-//   const baseStyle = "px-6 py-2 text-base rounded-lg font-medium transition-all duration-300 border-2";
-
-//   // Classes for the default variant (outline with gradient text)
-//   const defaultClasses = `
-//     border-[#E45D25] 
-//     text-transparent 
-//     bg-clip-text 
-//     bg-gradient-to-r from-gr-start to-gr-end 
-//     bg-transparent 
-//     hover:bg-gradient-to-r 
-//     hover:from-gr-start 
-//     hover:to-gr-end 
-//     hover:text-white
-//   `.replace(/\s+/g, ' ').trim();
-
-//   // Classes for the outline variant (solid text color with gradient background on hover)
-//   const outlineClasses = `
-//     border-[#E45D25] 
-//     text-[#171717] 
-//     bg-transparent 
-//     hover:bg-gradient-to-r 
-//     hover:from-gr-start 
-//     hover:to-gr-end 
-//     hover:text-white
-//   `.replace(/\s+/g, ' ').trim();
-
-//   // Determine which classes to apply based on the variant prop
-//   const variantClasses = variant === 'default' ? defaultClasses : outlineClasses;
-
-//   // Combine base styles with variant-specific styles
-//   const classes = `${baseStyle} ${variantClasses}`;
-
-//   return (
-//     <button
-//       className={classes}
-//       onClick={onClick}
-//       style={style}
-//     >
-//       {label}
-//     </button>
-//   );
-// };
-
-// export default Button;
-
-
 'use client'; // This marks the component as a Client Component
 
-import React from 'react';
+import React, { useState } from 'react';
 
 type ButtonProps = {
   label: string;
@@ -69,12 +10,13 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'default' }) => {
+  const [isHovered, setIsHovered] = useState(false);
   // Base styles applied to all variants
-  const baseStyle = "px-6 py-2 text-base rounded-lg font-medium transition-all duration-300 border-2 overflow-hidden";
+  const baseStyle =
+    'px-6 py-2 text-base rounded-lg font-medium transition-all duration-300 relative overflow-hidden';
 
   // Classes for the default variant (outline with gradient text, border color, and transparent background)
   const defaultClasses = `
-    border-[#E45D25] 
     text-transparent 
     bg-clip-text 
     bg-gradient-to-r from-gr-start to-gr-end 
@@ -83,10 +25,23 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'defau
 
   // Classes for the fill variant (solid gradient background and white text)
   const fillClasses = `
-    border-none
+    border-none 
     text-white 
     bg-gradient-to-r from-gr-start to-gr-end 
   `.replace(/\s+/g, ' ').trim();
+
+  // Inline styles for hover effect (applied only in the default variant)
+  const inlineHoverStyle = isHovered && variant === 'default'
+    ? {
+        background: 'linear-gradient(to right, #E45D25, #F58E1E)', // Full gradient background when hovered
+        color: '#FFFFFF',
+        boxShadow: 'inset 0 0 0 2px transparent', // Remove the "border" effect on hover
+        transition: 'all 0.3s ease-in-out', // Smooth transition
+      }
+    : {
+        boxShadow: 'inset 0 0 0 2px #E45D25', // Simulate the border using inset box-shadow
+        transition: 'all 0.3s ease-in-out', // Smooth transition
+      };
 
   // Determine which classes to apply based on the variant prop
   const variantClasses = variant === 'default' ? defaultClasses : fillClasses;
@@ -98,7 +53,9 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'defau
     <button
       className={classes}
       onClick={onClick}
-      style={style}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ ...style, ...inlineHoverStyle }}
     >
       {label}
     </button>

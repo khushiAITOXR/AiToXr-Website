@@ -6,7 +6,7 @@ const Awards: React.FC = () => {
     <section className="w-full py-16 bg-[rgba(243,243,243,1)]">
       <div className="max-w-7xl w-full px-6 mx-auto">
         {/* Section Title */}
-        <h2 className="text-center text-[#1E1E1E] font-bold text-3xl">
+        <h2 className="text-center text-[#1E1E1E] font-bold text-5xl">
           Our <span className="text-[#E45D25]">Awards</span> and Recognitions
         </h2>
 

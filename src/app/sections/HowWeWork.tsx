@@ -5,7 +5,7 @@ const HowWeWork: React.FC = () => {
   return (
     <section className="p-8 bg-[rgba(243,243,243,1)]">
       {/* Section Title */}
-      <h2 className="text-center text-[#1E1E1E] font-bold text-3xl mb-16">
+      <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
         How we <span className="text-[rgba(228,93,37,1)]">Work?</span>
       </h2>
 
