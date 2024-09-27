@@ -32,38 +32,47 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
   return (
     <div
-      className={`${className} flex flex-col justify-between items-end p-4 bg-white rounded-md border border-[#E45D25] transition-all duration-300 ${
-        hoverEffect && isHovered ? 'bg-gradient-to-r from-[#E45D25] to-[#F58E1E]' : ''
-      }`}
-      style={{ ...style }}
+      className={`${className} flex flex-col justify-between items-end p-4 rounded-md border border-[#E45D25] transition-all duration-300 relative overflow-hidden`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{
+        ...style,
+        backgroundColor: '#ffffff', // Always white unless hovered
+        backgroundImage: 'linear-gradient(to right, #E45D25, #F58E1E)', // Gradient for the hover effect
+        backgroundSize: isHovered ? '100% 100%' : '0% 100%', // Start with no gradient and expand on hover
+        backgroundPosition: 'left center', // Start from the left
+        backgroundRepeat: 'no-repeat', // Prevent background repetition
+        transition: 'background-size 0.5s ease-out', // Smooth transition for background size
+      }}
     >
       {/* Image and Contact Details Section */}
       <div className="w-full flex justify-between items-end">
         {/* Image */}
         <div className="h-full flex items-end">
           <Image
-            src={isHovered && hoverEffect && hoverImage ? hoverImage : image} // Use fallback to "image" if hoverImage is undefined
+            src={isHovered && hoverEffect && hoverImage ? hoverImage : image}
             alt="Contact"
-            width={imageWidth} // Use imageWidth prop
-            height={imageHeight} // Use imageHeight prop
+            width={imageWidth}
+            height={imageHeight}
             className="object-contain transition-all duration-100"
           />
         </div>
         {/* Heading and Contact Details */}
-        <div
-          className={`flex flex-col items-end transition-all duration-100 ${
-            hoverEffect && isHovered ? 'text-white' : 'text-[#1E1E1E]'
-          }`}
+        <div className={`flex flex-col items-end transition-all duration-100 ${hoverEffect && isHovered ? 'text-white' : 'text-[#1E1E1E]'}`} 
+        style={{
+          transitionDelay: isHovered ? '0.2s' : '0s', // Delay the text color change slightly
+        }}
         >
           {/* Heading */}
           <h3
             className={`text-right text-[2.25rem] font-[700] bg-clip-text ${
-              hoverEffect && isHovered
-                ? 'bg-transparent text-white'
-                : 'text-transparent bg-gradient-to-r from-[#E45D25] to-[#F58E1E]'
-            } transition-all duration-100`}
+              isHovered
+                ? 'text-white' // Change to white on hover
+                : 'bg-gradient-to-r from-[#E45D25] to-[#F58E1E] text-transparent'
+            } transition-all duration-300`}
+            style={{
+              transitionDelay: isHovered ? '0.3s' : '0s', // Delay text color change slightly
+            }}
           >
             {heading}
           </h3>

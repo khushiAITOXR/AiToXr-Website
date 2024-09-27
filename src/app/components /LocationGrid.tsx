@@ -10,12 +10,12 @@ const locations = [
   {
     src: '/us.svg', // Image path
     title: 'USA',
-    address: '26 Matthews Gate, Mississauga ON L5B 3C4, Canada',
+    address: '26 Matthews Gate, Mississauga ON L5B 3C4, USA',
   },
   {
     src: '/canada.svg', // Image path
     title: 'CANADA',
-    address: '25B, Sector- 123, Near IT Park, Noida, Uttar Pradesh, India - 1232323',
+    address: '26 Matthews Gate, Mississauga ON L5B 3C4, Canada',
   },
 ];
 
