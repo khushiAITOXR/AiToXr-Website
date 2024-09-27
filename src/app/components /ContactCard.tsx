@@ -65,13 +65,13 @@ const ContactCard: React.FC<ContactCardProps> = ({
         >
           {/* Heading */}
           <h3
-            className={`text-right text-[2.25rem] font-[700] bg-clip-text ${
+            className={`text-right text-[2.25rem] font-[700] ${
               isHovered
-                ? 'text-white' // Change to white on hover
-                : 'bg-gradient-to-r from-[#E45D25] to-[#F58E1E] text-transparent'
+                ? 'text-white' // On hover, transition to white
+                : 'bg-gradient-to-r from-[#E45D25] to-[#F58E1E] text-transparent bg-clip-text' // Gradient text before hover
             } transition-all duration-300`}
             style={{
-              transitionDelay: isHovered ? '0.3s' : '0s', // Delay text color change slightly
+              transitionDelay: isHovered ? '0.05s' : '0s', // Delay the white color change on hover
             }}
           >
             {heading}
