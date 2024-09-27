@@ -16,7 +16,7 @@ const Awards: React.FC = () => {
         </p>
 
         {/* Awards/Icons Row */}
-        <div className="mt-10 flex justify-center items-center gap-14">
+        <div className="mt-10 flex justify-center items-center gap-14 w-[98%] m-auto">
           <div className="h-[8.125rem]">
             <Image src="/1.png" alt="Award 1" width={130} height={130} />
           </div>

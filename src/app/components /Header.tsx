@@ -61,7 +61,7 @@ import { useRouter } from 'next/navigation';
   return (
    <> 
     <header 
-    className={`sticky top-0 left-0 w-full px-20 py-4 flex justify-between items-center z-50 transition-all duration-300 border-b-[1.5px] border-[#E45D25] bg-[#00000033] backdrop-blur-[10px] ${
+    className={`sticky top-0 left-0 w-full px-20 py-4 flex justify-between items-center z-50 transition-all duration-300 border-b-[1.5px] border-[#E45D25] bg-[#00000080] backdrop-blur-[10px] ${
       isScrolled
         ? 'bg-gradient-to-r from-black via-gray-900 to-black'
         : 'bg-transparent'

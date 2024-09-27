@@ -171,7 +171,7 @@ const ServiceCard = () => {
   // const remainingTitle = title.split(" ").slice(1).join(" ");
 
   return (
-    <div className="w-full max-w-7xl mx-auto py-16 bg-white">
+    <div className="w-[90%] max-w-7xl mx-auto py-16 bg-white">
       <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
         What We <span className="text-[#E45D25]">Do?</span>
       </h2>
@@ -179,13 +179,13 @@ const ServiceCard = () => {
       {/* Main flex container for left list and right card */}
       <div className="flex justify-center">
         {/* Left - List of Services */}
-        <div className=" bg-[#f5f5f5] rounded-l-lg w-[45%]"
+        <div className=" bg-[#f5f5f5] rounded-l-lg w-[45%] pr-2"
         style={{ position: 'relative', left: '17px', zIndex: '0', borderRadius:'1.25rem 0rem 0rem 1.25rem', width:"50%"}} 
         >
           {serviceItems.map((service) => (
             <div
               key={service.id}
-              className={`flex justify-between items-center pl-8 pr-12 py-[1.5rem] cursor-pointer text-[1.5rem] ${
+              className={` w-[102%] flex justify-between items-center pl-8 pr-12 py-[1.5rem] cursor-pointer text-[1.5rem] ${
                 selectedService === service.id ? 'bg-gr-start text-white' : 'bg-transparent text-black border-black'
               }`}
               onClick={() => handleSelectService(service.id)}

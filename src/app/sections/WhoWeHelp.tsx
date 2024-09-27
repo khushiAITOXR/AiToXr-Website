@@ -3,12 +3,12 @@ import Card from '../components /Card';
 
 const WhoWeHelp: React.FC = () => {
   return (
-    <section className="p-16 bg-white">
+    <section className="w-[100%] p-16 bg-white m-auto">
       <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-12">
         Who Can We <span className="text-[#E45D25]">Help</span>
       </h2>
 
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="w-[100%] flex flex-wrap justify-center gap-6 m-auto">
         <Card
           imageSrc="/rocket.png"
           label="STARTUPS"

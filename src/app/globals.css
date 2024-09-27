@@ -25,3 +25,14 @@ body {
     text-wrap: balance;
   }
 }
+
+.bg-position-0 {
+  background-position: 0% 50%; /* Default position */
+  transition: background-position 0.5s ease-in-out; /* Smooth transition */
+}
+
+.bg-position-100 {
+  background-position: 100% 50%; /* Move the background from left to right */
+  transition: background-position 0.5s ease-in-out; /* Smooth transition */
+}
+
