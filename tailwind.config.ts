@@ -34,12 +34,17 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
         },
+        gradientMove: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
         slideDown: 'slideDown 0.5s ease-out forwards',
         slideUp: 'slideUp 0.5s ease-in forwards',
         slideIn: 'slideIn 0.5s ease-in-out',
         slideOut: 'slideOut 0.5s ease-in-out',
+        gradientMove: 'gradientMove 0.4s ease-in-out forwards',
       },
       
     },
