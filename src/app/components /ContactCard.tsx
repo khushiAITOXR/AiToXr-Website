@@ -32,7 +32,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
   return (
     <div
-      className={`${className} flex flex-col justify-between items-end p-4 rounded-md border border-[#E45D25] transition-all duration-300 relative overflow-hidden`}
+      className={`${className} flex flex-col justify-between items-end px-4 py-4 rounded-md border border-[#E45D25] transition-all duration-300 relative overflow-hidden`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{

@@ -35,7 +35,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   };
 
   return (
-    <div className="relative bg-white shadow-lg rounded-[40px] p-8 w-[76.25rem] h-[20.11975rem]">
+    <div className="relative bg-white shadow-lg rounded-[40px] p-8 w-[86%] h-[20.11975rem] m-auto">
       <div className="flex justify-between h-full items-start px-14">
         {/* Left Section */}
         <div className="flex-1 pr-8">

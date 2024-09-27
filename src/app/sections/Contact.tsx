@@ -21,7 +21,7 @@ const phoneNumber3 = '+91 9876-082332';
 
 const Contact = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section ref={ref} className="w-full py-16 h-[880px] flex justify-center items-start bg-white">
+    <section ref={ref} className="w-full py-16 h-[880px] flex justify-center items-start bg-white m-auto">
       <div className="max-w-7xl w-full px-6">
         {/* Section Title */}
         <h2 className="text-center text-[#1E1E1E] font-bold text-5xl">
@@ -34,10 +34,10 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
         </p>
 
         {/* Form and Right Column */}
-        <div className="flex flex-col lg:flex-row mt-10 gap-8 h-[80%]">
+        <div className="flex flex-col justify-center lg:flex-row mt-10 gap-8 h-[80%] w-[98%] m-auto">
           {/* Form Section */}
           <div className="flex-1">
-            <form className="space-y-6">
+            <form className="space-y-6 h-[100%] flex flex-col justify-between">
               {/* First Name and Last Name */}
               <div className="flex space-x-4">
                 <input
@@ -73,7 +73,9 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
               ></textarea>
 
               {/* Button */}
-              <Button variant="default" label="Let's Connect" onClick={() => alert('Message sent!')} />
+              <Button variant="default" label="Let's Connect" onClick={() => alert('Message sent!')} style={{
+                alignSelf:"flex-start"
+              }}/>
             </form>
           </div>
 

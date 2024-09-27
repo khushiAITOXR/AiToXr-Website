@@ -24,7 +24,7 @@ const FAQ: React.FC<FAQProps> = ({ question, answer, isOpen, onToggle }) => {
   }, [isOpen]);
 
   return (
-    <div className="relative my-4" style={{ padding: '3px', borderRadius: '50px' }}>
+    <div className="w-[98%] relative my-4 m-auto" style={{ padding: '3px', borderRadius: '50px' }}>
       {/* Background gradient div */}
       <div
         className="absolute inset-0 rounded-[50px] z-0"

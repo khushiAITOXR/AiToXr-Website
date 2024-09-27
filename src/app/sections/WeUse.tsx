@@ -126,14 +126,14 @@ const WeUse: React.FC = () => {
   ];
 
   return (
-    <section className="p-8 py-16 bg-[rgba(243,243,243,1)]">
+    <section className="w-[100%] p-8 py-16 bg-[rgba(243,243,243,1)] m-auto">
       {/* Section Title */}
       <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
         Technology We <span className="text-[#E45D25]">Use</span>
       </h2>
 
       {/* Grid Section */}
-      <div className="mx-auto w-[80%]">
+      <div className="mx-auto w-[82%]">
         <Grid rows={3} columns={8} items={items} />
       </div>
     </section>

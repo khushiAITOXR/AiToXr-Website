@@ -11,7 +11,7 @@ const BlogPost: React.FC = () => {
         </h2>
 
         {/* Blog Post Cards */}
-        <div className="mt-10 p-8 flex justify-center space-x-6">
+        <div className="mt-10 flex justify-center space-x-6 m-auto">
           <BlogPostCard
             bgImage="/nvidia.jpg" // Path to your background image
             topic="Do you offer custom software development?"

@@ -105,7 +105,7 @@ const Card: React.FC<CardProps> = ({ imageSrc, label, description, bgImage }) =>
 
   return (
     <motion.div
-      className="relative w-[25.125rem] h-[28.125rem] rounded-[1.875rem] overflow-hidden cursor-pointer"
+      className="relative w-[24.125rem] h-[28.125rem] rounded-[1.875rem] overflow-hidden cursor-pointer"
       variants={containerVariants}
       initial="initial"
       whileHover="hover"

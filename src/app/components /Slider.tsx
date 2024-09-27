@@ -100,7 +100,7 @@ const Slider = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   width: "100%", 
-                  height: "100%",
+                  height: "80%",
                 }}
               >
                 <Image
@@ -110,7 +110,7 @@ const Slider = () => {
                   height={25}
                   style={{
                     maxWidth: "100%", // Ensure the image scales with the container width
-                    maxHeight: "100%", // Ensure the image scales with the container height
+                    maxHeight: "80%", // Ensure the image scales with the container height
                     objectFit: "contain", // Scale the image proportionally
                   }} // Adjust image size as needed
                 />

@@ -51,7 +51,7 @@ const Testimonials = forwardRef<HTMLElement, object>((_, ref) => {
   };
 
   return (
-    <section ref={ref} className="p-16 bg-[#F3F3F3] flex flex-col justify-center items-center">
+    <section ref={ref} className="p-16 bg-[#F3F3F3] flex flex-col justify-center items-center w-[100%]">
       {/* Section Title */}
       <div className="flex items-center mb-12 gap-14">
         <button onClick={handlePrev} className="mr-4">
