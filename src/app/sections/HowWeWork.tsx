@@ -16,7 +16,7 @@ const HowWeWork: React.FC = () => {
           alt="Work Flow"
           width={800} // You can set a default width for large screens
           height={600} // Set a default height, keeping aspect ratio
-          className="w-full h-auto max-w-[80%]" // Ensures responsiveness
+          className="w-full h-auto max-w-[82%]" // Ensures responsiveness
         />
       </div>
     </section>

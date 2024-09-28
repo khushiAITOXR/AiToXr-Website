@@ -13,7 +13,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ bgImage, topic, type = 'blo
   return (
     <div
       className="relative rounded-xl overflow-hidden"
-      style={{ width: '27.1875rem', height: '32.3125rem' }} // Fixed width and height
+      style={{ width: '31%', height: '32.3125rem' }} // Fixed width and height
     >
       {/* Background Image */}
       <Image

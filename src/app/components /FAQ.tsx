@@ -37,7 +37,7 @@ const FAQ: React.FC<FAQProps> = ({ question, answer, isOpen, onToggle }) => {
 
       {/* Main content div */}
       <div
-        className="relative z-10 bg-white rounded-[47.5px] p-6"
+        className="relative z-10 bg-white rounded-[47.5px] p-6 w-[100%]"
         style={{
           boxSizing: "border-box",
         }}

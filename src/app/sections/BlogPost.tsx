@@ -3,15 +3,15 @@ import BlogPostCard from '../components /BlogPostCard';
 
 const BlogPost: React.FC = () => {
   return (
-    <section className="w-full py-16 bg-[#F3F3F3]">
-      <div className="max-w-7xl w-full px-6 mx-auto">
+    <section className="w-full py-16 bg-[#F3F3F3] m-auto">
+      <div className="w-[82%] mx-auto">
         {/* Section Title */}
         <h2 className="text-center text-[#1E1E1E] font-bold text-5xl">
           Insights
         </h2>
 
         {/* Blog Post Cards */}
-        <div className="mt-10 flex justify-center space-x-6 m-auto">
+        <div className="mt-10 flex justify-center space-x-[2%] m-auto">
           <BlogPostCard
             bgImage="/nvidia.jpg" // Path to your background image
             topic="Do you offer custom software development?"
