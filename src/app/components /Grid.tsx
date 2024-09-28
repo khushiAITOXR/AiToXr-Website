@@ -22,11 +22,11 @@ const Grid: React.FC<GridProps> = ({ items, defaultOpacity = 0.3, variant = 'pri
     : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'; // Secondary layout with 6 columns for large screens
 
   return (
-    <div className={`grid ${gridColumns} gap-0 border border-gray-400`}>
+    <div className={`grid ${gridColumns} gap-0`}>
       {items.map((item, index) => (
         <div
           key={index}
-          className={`flex flex-col justify-center items-center p-4 border border-gray-400 transition-all duration-300 ${
+          className={`flex flex-col justify-center items-center p-4 border border-gray-400 border-collapse transition-all duration-300 ${
             variant === 'secondary' && hoverIndex === index ? 'border-none bg-gradient-to-r from-gr-start to-gr-end text-white' : ''
           }`}
           onMouseEnter={() => setHoverIndex(index)} // Set the hover index
