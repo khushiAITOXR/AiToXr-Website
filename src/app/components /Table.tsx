@@ -12,7 +12,7 @@ type TableProps = {
 
 const Table: React.FC<TableProps> = ({ columns }) => {
   return (
-    <div className="overflow-x-auto w-[90%] m-auto">
+    <div className="overflow-x-auto w-[82%] m-auto">
       <table className="min-w-full border-separate" style={{ borderSpacing: '0', borderRadius: '1.25rem', overflow: 'hidden' }}>
         <thead className="bg-[#D9D9D9]">
           <tr>

@@ -143,11 +143,11 @@ For businesses looking to remain agile and competitive, staff augmentation offer
         onSectionChange={handleSectionChange}
         ref={AboutSectionRef}
       />
-      <section  ref={benefitsSectionRef} className='bg-[#F3F3F3] py-20'>
+      <section  ref={benefitsSectionRef} className='bg-[#F3F3F3] py-20 m-auto w-full'>
         <h2 className='text-center font-bold text-[3rem] mb-4'>Benefits of Staff <span className='text-[#E45D25;]'>Augmentation</span></h2>
-        <p className='text-center text-[1.125rem] w-[72%] m-auto mb-8'>Staff augmentation offers businesses the flexibility to scale their workforce according to project demands without the long-term commitment of hiring full-time employees. It allows access to specialized skills on-demand, reduces operational costs, and ensures faster project delivery by filling skill gaps quickly</p>
-        <div className='flex justify-center gap-32'>
-          <div className='w-[140px] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
+        <p className='text-center text-[1.125rem] w-[82%] m-auto mb-8'>Staff augmentation offers businesses the flexibility to scale their workforce according to project demands without the long-term commitment of hiring full-time employees. It allows access to specialized skills on-demand, reduces operational costs, and ensures faster project delivery by filling skill gaps quickly</p>
+        <div className='flex justify-center gap-32 w-[82%] m-auto'>
+          <div className='w-[15%] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
           <Image 
             src="/badge.svg" 
             alt="badge icon"
@@ -156,7 +156,7 @@ For businesses looking to remain agile and competitive, staff augmentation offer
             />
             <h3 className='text-center text-[14px] font-medium  mt-4'>TOP Experts</h3>
           </div>
-          <div className='w-[140px] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
+          <div className='w-[15%] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
             <Image 
             src="/chatting.svg" 
             alt="chat icon"
@@ -165,7 +165,7 @@ For businesses looking to remain agile and competitive, staff augmentation offer
             />
             <h3 className='text-center text-[14px] font-medium mt-4'>Streamline Communication</h3>
           </div>
-          <div className='w-[140px] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-2'>
+          <div className='w-[15%] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-2'>
             <Image 
             src="/time-left.svg" 
             alt="watch icon"
@@ -174,7 +174,7 @@ For businesses looking to remain agile and competitive, staff augmentation offer
             />
             <h3 className='text-center text-[14px] font-medium  mt-4'>Saves Recruitment Time</h3>
           </div>
-          <div className='w-[140px] h-[140px]  border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
+          <div className='w-[15%] h-[140px]  border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
             <Image 
             src="/heart.svg" 
             alt="heart icon"
@@ -189,7 +189,7 @@ For businesses looking to remain agile and competitive, staff augmentation offer
       </section>
 
 
-      <section ref={WhatWeProvideSectionRef} className="py-16">
+      <section ref={WhatWeProvideSectionRef} className="py-16 w-full m-auto">
           <h2 className="text-center text-5xl font-bold leading-[145%] mb-8">
             {title.split(highlightedTitlePart)[0]}
             <span className="text-[#E45D25]"> {highlightedTitlePart} </span>
@@ -197,12 +197,12 @@ For businesses looking to remain agile and competitive, staff augmentation offer
           </h2>
 
           {/* Description */}
-          <p className="text-center text-[1.125rem] font-normal leading-[167%] mx-auto w-[70%] mb-12">
+          <p className="text-center text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
             {description}
           </p>
 
           {/* Project Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 mx-auto w-full lg:w-[90%] justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 mx-auto w-[82%] justify-items-center">
             {visibleProjects.map((project, index) => (
               <BlogPostCard
                 key={index}

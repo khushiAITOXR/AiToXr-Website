@@ -171,7 +171,7 @@ const ServiceCard = () => {
   // const remainingTitle = title.split(" ").slice(1).join(" ");
 
   return (
-    <div className="w-[90%] max-w-7xl mx-auto py-16 bg-white">
+    <div className="w-[86%] py-16 bg-white m-auto">
       <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
         What We <span className="text-[#E45D25]">Do?</span>
       </h2>

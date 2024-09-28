@@ -24,7 +24,7 @@ const InsightsPage = () => {
   return (
     <>
         {/* <!-- Image Background --> */}
-        <Image src="/insights-hero.jpg" alt="Background Image" fill className="h-full object-cover" />
+        <Image src="/insights-hero.jpg" alt="Background Image" fill className="object-cover relative top[-40%]" />
 
         {/* <!-- Text Overlay --> */}
         <div className="absolute inset-0 flex flex-col justify-end items-center pb-8">

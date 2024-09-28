@@ -8,7 +8,7 @@ const WhoWeHelp: React.FC = () => {
         Who Can We <span className="text-[#E45D25]">Help</span>
       </h2>
 
-      <div className="w-[100%] flex flex-wrap justify-center gap-6 m-auto">
+      <div className="w-[86%] flex flex-wrap justify-center gap-[2%] m-auto">
         <Card
           imageSrc="/rocket.png"
           label="STARTUPS"

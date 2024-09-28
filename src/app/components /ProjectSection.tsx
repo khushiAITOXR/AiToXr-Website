@@ -44,7 +44,7 @@ const ProjectSection = forwardRef<HTMLElement, ProjectSectionProps>(
   ].slice(0, visibleCards); // Ensures we have only 'visibleCards' number of cards visible
 
   return (
-    <section ref={ref} className="py-16">
+    <section ref={ref} className="py-16 w-full">
       {/* Title */}
       <h2 className="text-center text-5xl font-bold leading-[145%] mb-8">
         {title.split(highlightedTitlePart)[0]}
@@ -53,7 +53,7 @@ const ProjectSection = forwardRef<HTMLElement, ProjectSectionProps>(
       </h2>
 
       {/* Buttons */}
-      <div className="flex justify-end mb-8 w-[94%]">
+      <div className="flex justify-end mb-8 w-[82%] mx-auto">
         <button onClick={handlePrev}>
           <Image src="/left.svg" alt="Previous" width={40} height={40} />
         </button>
@@ -63,8 +63,8 @@ const ProjectSection = forwardRef<HTMLElement, ProjectSectionProps>(
       </div>
 
       {/* Project Cards */}
-      <div className="flex overflow-hidden gap-10 justify-center">
-        <div className="flex gap-10 items-center" style={{ width: `${visibleCards * 450}px` }}>
+      <div className="flex overflow-hidden gap-10 justify-center w-full">
+        <div className="flex gap-10 items-center w-[82%]">
           {visibleProjects.map((project, index) => (
             <BlogPostCard
               key={index}

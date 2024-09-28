@@ -20,7 +20,7 @@ type SolutionsSectionProps = {
 const SolutionsSection = forwardRef<HTMLElement, SolutionsSectionProps>(
   ({ sectionTitle, highlightedTitlePart, items, sectionStyle = {} }, ref) => {
   return (
-    <section ref={ref} style={sectionStyle} className="py-16 m-auto bg-[#F3F3F3] px-50">
+    <section ref={ref} style={sectionStyle} className="py-16 m-auto bg-[#F3F3F3] w-full">
       {/* Section Heading */}
       <h2 className="text-5xl font-bold text-center mb-12">
         {sectionTitle.split(highlightedTitlePart)[0]}
@@ -29,9 +29,9 @@ const SolutionsSection = forwardRef<HTMLElement, SolutionsSectionProps>(
       </h2>
 
       {/* Solutions List */}
-      <div className="space-y-10">
+      <div className="space-y-10 m-auto w-full">
         {items.map((item, index) => (
-          <div key={index} className="flex justify-between items-start space-x-8 gap-[5%]">
+          <div key={index} className="flex justify-between items-start gap-[5%]">
             {/* Image */}
             <div>
               <Image

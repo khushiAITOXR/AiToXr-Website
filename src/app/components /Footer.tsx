@@ -9,8 +9,8 @@ import FooterLocations from './LocationGrid';
 const Footer: React.FC = () => {
   const [isChecked, setIsChecked] = useState(false);
   return (
-    <footer className="bg-black py-16 px-8">
-      <div className="flex justify-between w-full max-w-7xl mx-auto">
+    <footer className="bg-black py-16 px-8 w-full">
+      <div className="flex justify-between w-[82%] mx-auto">
         {/* Left Section - 3 Columns */}
         <div className="w-[70%] border-r border-white pr-8">
           <div className="grid grid-cols-3 gap-8">

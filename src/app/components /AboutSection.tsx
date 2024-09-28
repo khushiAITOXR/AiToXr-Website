@@ -22,10 +22,10 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
     };
 
   return (
-    <section ref={ref} className={`py-16`} style={{ backgroundColor }}>
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto gap-12">
+    <section ref={ref} className={`py-16 w-full`} style={{ backgroundColor }}>
+      <div className="flex flex-col lg:flex-row mx-auto gap-12 w-[82%]">
         {/* Left Column - List of items */}
-        <div className="flex flex-col w-full lg:w-[30%] pr-8">
+        <div className="flex flex-col w-[35%]">
           {listItems.map((item) => (
             <div
               key={item.id}
@@ -44,7 +44,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
         </div>
 
         {/* Right Column - Content - Constant content for this section */}
-        <div className="flex flex-col w-full lg:w-[70%]">
+        <div className="flex flex-col">
           {/* Fixed Content for the Section */}
           <div className="mb-8">
             <h1 className="text-[#1E1E1E] font-bold text-[3rem] leading-[145%]">
