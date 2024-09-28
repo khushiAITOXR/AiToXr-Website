@@ -40,7 +40,7 @@ export default function AnimatedImageGrid({
   }, [controls, inView]);
 
   return (
-    <div className="relative h-[28rem] w-[90%] mx-auto overflow-hidden">
+    <div className="relative h-[28rem] w-full mx-auto overflow-hidden">
       {/* Fade overlay at top and bottom */}
       <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-white via-transparent to-transparent z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white via-transparent to-transparent z-10"></div>
@@ -53,7 +53,7 @@ export default function AnimatedImageGrid({
           visible: { opacity: 1, transition: { duration: 0.5 } },
           hidden: { opacity: 0 },
         }}
-        className="flex gap-9 overflow-hidden h-full justify-center items-baseline "
+        className="flex gap-[3%] overflow-hidden h-full justify-center items-baseline w-[82%] m-auto"
       >
         {columns.map((column, columnIndex) => (
           <motion.div
