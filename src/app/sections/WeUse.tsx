@@ -134,7 +134,7 @@ const WeUse: React.FC = () => {
 
       {/* Grid Section */}
       <div className="mx-auto w-[82%]">
-        <Grid rows={3} columns={8} items={items} />
+        <Grid items={items} />
       </div>
     </section>
   );

@@ -1,9 +1,8 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import Image from 'next/image'; // Using Next.js Image for optimized loading
 
 type GridProps = {
-  rows: number;
-  columns: number;
   items: {
     src: string; // Image source URL
     alt: string; // Alt text for the image
@@ -11,23 +10,27 @@ type GridProps = {
     imageSize?: number; // Optional size for the image
   }[];
   defaultOpacity?: number; // New prop to set the default opacity of the images
+  variant?: 'primary' | 'secondary'; // Variant prop to switch between primary and secondary layouts
 };
 
-const Grid: React.FC<GridProps> = ({ rows, columns, items, defaultOpacity = 0.3 }) => {
-  // Create grid styles dynamically
-  const gridStyle = {
-    gridTemplateColumns: `repeat(${columns}, 1fr)`,
-    gridTemplateRows: `repeat(${rows}, 1fr)`,
-    border: '1px solid #9A9A9A', // Outer border of the entire grid
-    gap: '0', // Ensure no space between grid items
-  };
+const Grid: React.FC<GridProps> = ({ items, defaultOpacity = 0.3, variant = 'primary' }) => {
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null); // State to track which grid item is hovered
+
+  // Choose the grid column layout based on the variant
+  const gridColumns = variant === 'primary'
+    ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8'
+    : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'; // Secondary layout with 6 columns for large screens
 
   return (
-    <div className="grid gap-4" style={gridStyle}>
+    <div className={`grid ${gridColumns} gap-0 border border-gray-400`}>
       {items.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col justify-center items-center p-4 border border-[#9A9A9A]"
+          className={`flex flex-col justify-center items-center p-4 border border-gray-400 transition-all duration-300 ${
+            variant === 'secondary' && hoverIndex === index ? 'border-none bg-gradient-to-r from-gr-start to-gr-end text-white' : ''
+          }`}
+          onMouseEnter={() => setHoverIndex(index)} // Set the hover index
+          onMouseLeave={() => setHoverIndex(null)} // Reset the hover index
         >
           {/* Image Section */}
           <Image
@@ -35,23 +38,22 @@ const Grid: React.FC<GridProps> = ({ rows, columns, items, defaultOpacity = 0.3 
             alt={item.alt}
             width={item.imageSize || 60} // Default size to 60px if not provided
             height={item.imageSize || 60}
-            className="mb-6 grayscale transition-all duration-500"
-            style={{
-              opacity: defaultOpacity, // Use the defaultOpacity prop for initial opacity
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = '1';
-              (e.currentTarget as HTMLElement).style.filter = 'grayscale(0)';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = `${defaultOpacity}`;
-              (e.currentTarget as HTMLElement).style.filter = 'grayscale(100%)';
-            }}
+            className={`mb-6 transition-all duration-300 ${
+              variant === 'primary'
+                ? 'grayscale hover:grayscale-0' // Primary variant: black-and-white by default, color on hover
+                : hoverIndex === index
+                ? 'filter invert' // Secondary variant: invert to white on hover
+                : ''
+            }`}
           />
 
           {/* Label Section */}
           {item.label && (
-            <p className="text-[#000] text-center text-[1.125rem] font-normal opacity-60">
+            <p
+              className={`text-center text-lg font-normal opacity-60 transition-all duration-500 ${
+                variant === 'secondary' && hoverIndex === index ? 'text-white opacity-100' : ''
+              }`}
+            >
               {item.label}
             </p>
           )}
