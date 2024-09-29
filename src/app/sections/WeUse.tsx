@@ -29,9 +29,9 @@ const WeUse: React.FC = () => {
       label: 'Photoshop',
     },
     {
-      src: '/tech-logos/R_icon.png',
-      alt: 'R Programming',
-      label: 'R Programming',
+      src: '/tech-logos/Java_icon.png',
+      alt: 'Java',
+      label: 'Java',
     },
     {
       src: '/tech-logos/Tensorflow_icon.png',
@@ -126,9 +126,9 @@ const WeUse: React.FC = () => {
   ];
 
   return (
-    <section className="w-[100%] p-8 py-16 bg-[rgba(243,243,243,1)] m-auto">
+    <section className="w-[100%] py-16 bg-[rgba(243,243,243,1)] m-auto">
       {/* Section Title */}
-      <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
+      <h2 className="text-center text-[#1E1E1E] font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
         Technology We <span className="text-[#E45D25]">Use</span>
       </h2>
 
