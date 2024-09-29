@@ -210,11 +210,31 @@ const ServiceCard = () => {
             {title}</h3>
 
           {/* Tech Icons */}
-          <div className="flex justify-center gap-4 mb-6">
+          <div className="flex justify-center flex-wrap gap-4 mb-6">
             {technologies.map((tech, index) => (
-              <Image key={index} src={tech} alt={`Tech ${index}`} width={80} height={80} />
+              <div 
+                key={index} 
+                className="flex justify-center items-center"
+                style={{
+                  width: '16%', // Default width for smaller screens
+                  maxWidth: '80px', // Max width to prevent the icons from being too large
+                }}
+              >
+                <Image 
+                  src={tech} 
+                  alt={`Tech ${index}`} 
+                  width={80} 
+                  height={80}
+                  className="w-full h-auto"
+                  style={{
+                    maxWidth: '100%', // Make sure image scales with the container
+                    maxHeight: 'auto',
+                  }}
+                />
+              </div>
             ))}
           </div>
+
 
           {/* Card Content */}
           <div className="text-white text-justify font-normal text-base leading-relaxed">

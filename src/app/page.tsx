@@ -65,14 +65,14 @@ const handleClick = (route: string) => {
   }}
 >
   {/* Background Image */}
-  <div className="relative w-full h-[45vh] lg:h-full overflow-hidden">
+  <div className="relative w-full h-[48vh] lg:h-full overflow-hidden">
     {/* Background Image */}
-    <div className="absolute inset-0 w-full h-full lg:clip-none clip-ellipse ">
+    <div className="absolute inset-0 lg:top-0 top-[6%] w-full h-full lg:clip-none clip-ellipse">
         <Image 
           src="/heroImage.jpg" 
           alt="Hero Background" 
           fill 
-          className="object-cover object-center w-full h-full translate-lower"
+          className="object-cover object-center w-full h-full"
           priority
           sizes="100vw"
         />
@@ -124,7 +124,7 @@ const handleClick = (route: string) => {
   </div>
 
   {/* Text Content for all screens smaller than 1024px */}
-  <div className="flex flex-col items-start justify-start w-full px-6 sm:px-8 lg:mt-0 lg:hidden mt-[3vh]">
+  <div className="flex flex-col items-start justify-start w-full px-6 sm:px-8 lg:mt-0 lg:hidden mt-[3vh] relative bottom-[10%]">
     
     {/* Paragraph 1 - Visible on <1024px */}
     <p className="flex items-center text-black font-normal text-[14px] sm:text-[16px] md:text-[18px] mb-4">
@@ -155,24 +155,19 @@ const handleClick = (route: string) => {
 
     {/* Button - Visible on all smaller screens */}
     <div>
-      <Button variant="default" label="Schedule a Call" onClick={handleScrollToContact} />
-    </div>
-
-    {/* Slider for smaller screens */}
-    <div className="mt-6">
-      <h3 className="text-black text-center mb-2">Our Brand Work for</h3>
-      <Slider />
-    </div>
-
-  </div>
-
-  {/* Bottom Section for larger screens */}
-  <div className='absolute bottom-0 left-0 w-full h-[160px] bg-black bg-opacity-50 lg:flex hidden'>
-    <div className='flex flex-col items-center justify-center h-full w-full'>
-      <h3 className='text-white text-center mt-2 mb-2'>Our Brand Work for</h3>
-      <Slider />
+      <Button variant={'fill'} label="Schedule a Call" onClick={handleScrollToContact} />
     </div>
   </div>
+
+  {/* Bottom Section */}
+  <div className="lg:absolute relative lg:bottom-0 bottom-[8.5%] left-0 w-full h-[20%] sm:h-[20vh] md:h-[140px] bg-black bg-opacity-50 flex flex-col items-center justify-center lg:h-[20%] lg:flex lg:flex-col lg:justify-center lg:items-center">
+    <h3 className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl">
+      Our Brand Work for
+    </h3>
+    <Slider />
+  </div>
+
+
 </section>
 
 
@@ -182,7 +177,7 @@ const handleClick = (route: string) => {
 
 
     {/* what we do */}
-    {/* <ServiceCard/> */}
+    <ServiceCard/>
 
     {/* Technology we use */}
     <WeUse/>

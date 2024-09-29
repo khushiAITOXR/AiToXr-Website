@@ -17,26 +17,31 @@ const images = [
 
 const Slider = () => {
   const duplicatedSlides = [...images, ...images];
+  const calculateMarginRight = () => {
+    const screenWidth = window.innerWidth;
+    // For responsive behavior: max 12% margin, minimum of 5px
+    const margin = Math.max(10, Math.min(screenWidth * 0.15, 20));
+    return `${margin}px`;
+  };
+
 
   return (
     <div
       style={{
         position: "relative",
-        height: "100%",
+        height: "100px",
         overflow: "hidden",
-        paddingTop: "12px",
-        paddingBottom: "12px",
         margin: "0 auto",
         width: "100%",
       }}
     >
-      <div
+      {/* <div
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 20,
         }}
-      >
+      > */}
         <div
           style={{
             position: "absolute",
@@ -59,7 +64,7 @@ const Slider = () => {
             filter: "blur(3px)",
           }}
         ></div>
-      </div>
+      {/* </div> */}
 
       <motion.div
         style={{
@@ -80,7 +85,7 @@ const Slider = () => {
             style={{
               flexShrink: 0,
               width: `${100 / images.length}%`,
-              marginRight: "30px",
+              marginRight: calculateMarginRight(),
             }}
           >
             <div
@@ -101,6 +106,8 @@ const Slider = () => {
                   alignItems: "center",
                   width: "100%", 
                   height: "80%",
+                  minHeight: "42px",
+                  minWidth: "70px", // Set min width so it doesn't shrink
                 }}
               >
                 <Image
