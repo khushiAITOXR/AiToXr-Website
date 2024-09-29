@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -17,13 +17,23 @@ const images = [
 
 const Slider = () => {
   const duplicatedSlides = [...images, ...images];
-  const calculateMarginRight = () => {
-    const screenWidth = window.innerWidth;
-    // For responsive behavior: max 12% margin, minimum of 5px
-    const margin = Math.max(10, Math.min(screenWidth * 0.15, 20));
-    return `${margin}px`;
-  };
+  const [marginRight, setMarginRight] = useState("10px");
+  useEffect(() => {
+    const calculateMarginRight = () => {
+      const screenWidth = window.innerWidth;
+      const margin = Math.max(10, Math.min(screenWidth * 0.15, 20));
+      setMarginRight(`${margin}px`);
+    };
 
+    // Calculate initial margin and add resize event listener
+    calculateMarginRight();
+    window.addEventListener("resize", calculateMarginRight);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", calculateMarginRight);
+    };
+  }, []);
 
   return (
     <div
@@ -85,7 +95,7 @@ const Slider = () => {
             style={{
               flexShrink: 0,
               width: `${100 / images.length}%`,
-              marginRight: calculateMarginRight(),
+              marginRight: marginRight,
             }}
           >
             <div
