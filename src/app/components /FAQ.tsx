@@ -47,13 +47,13 @@ const FAQ: React.FC<FAQProps> = ({ question, answer, isOpen, onToggle }) => {
           className="flex justify-between items-center cursor-pointer"
           onClick={onToggle}
         >
-          <h3 className="text-[#1E1E1E] font-medium text-lg">
+          <h3 className="text-[#1E1E1E] font-medium text-[14px] sm:text-base md:text-lg lg:text-lg">
             {question}
           </h3>
           {isOpen ? (
-            <FiChevronUp className="text-[#E45D25] text-2xl" />
+            <FiChevronUp className="text-[#E45D25] text-2xl min-w-6" />
           ) : (
-            <FiChevronDown className="text-[#E45D25] text-2xl" />
+            <FiChevronDown className="text-[#E45D25] text-2xl min-w-6" />
           )}
         </div>
 
@@ -65,7 +65,7 @@ const FAQ: React.FC<FAQProps> = ({ question, answer, isOpen, onToggle }) => {
             overflow: 'hidden', // Hide overflow
             transition: 'max-height 0.3s ease-in-out', // Smooth transition for max-height
           }}
-          className={`text-[#1E1E1E] text-base ${isOpen ? 'mt-6' : 'mt-0'}`}
+          className={`text-[#1E1E1E] font-normal text-[14px] sm:text-base md:text-lg lg:text-lg ${isOpen ? 'mt-6' : 'mt-0'}`}
         >
           {answer}
         </div>
