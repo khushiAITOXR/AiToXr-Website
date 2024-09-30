@@ -24,6 +24,25 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  @media (max-width: 1023px) {
+    .clip-ellipse {
+      clip-path: ellipse(65% 50% at 55% 20%);
+    }
+    .translate-lower {
+      transform: translateY(20%); /* Adjust this value as needed */
+    }
+  }
+  @media (max-width: 1024px) {
+    .gradient-t-b {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gradient-l-r {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+    }
+  }
 }
 
 .bg-position-0 {

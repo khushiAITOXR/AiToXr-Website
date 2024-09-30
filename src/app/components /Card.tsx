@@ -1,70 +1,3 @@
-// import React, { useState } from 'react';
-// import Image from 'next/image';
-
-// type CardProps = {
-//   imageSrc: string;
-//   label: string;
-//   description: string;
-//   bgImage?: string;
-// };
-
-// const Card: React.FC<CardProps> = ({ imageSrc, label, description, bgImage }) => {
-//   const [isHovered, setIsHovered] = useState(false);
-
-//   return (
-//     <div
-//       className={`relative w-[25.125rem] h-[28.125rem] rounded-[1.875rem] transition-transform transform-gpu duration-500 ${
-//         isHovered ? 'rotate-y-180' : ''
-//       }`}
-//       onMouseEnter={() => setIsHovered(true)}
-//       onMouseLeave={() => setIsHovered(false)}
-//       style={{
-//         background: 'linear-gradient(180deg, #F58E1E 0%, #E45D25 100%)',
-//         perspective: '1000px',
-//       }}
-//     >
-//       {/* Front Side */}
-//       <div
-//         className={`absolute inset-0 flex flex-col justify-center items-center p-4 ${
-//           isHovered ? 'hidden' : 'block'
-//         }`}
-//       >
-//         <Image src={imageSrc} alt={label} width={164} height={164} className="w-[10.25rem] h-[10.25rem]" />
-//         <h3 className="text-white text-center text-[1.875rem] font-bold mt-4">{label}</h3>
-//       </div>
-
-//       {/* Back Side (Visible on Hover) */}
-//       <div
-//         className={`absolute inset-0 p-8 flex flex-col justify-center items-center bg-cover bg-center ${
-//           isHovered ? 'block' : 'hidden'
-//         }`}
-//         style={{
-//           backgroundImage: `url(${bgImage})`,
-//           borderRadius: '1.875rem',
-//         }}
-//       >
-//         {/* Blur Overlay */}
-//         <div
-//           className="absolute inset-0 backdrop-blur-sm bg-white bg-opacity-30 z-10"
-//           style={{
-//             borderRadius: '1.875rem',
-//             background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, #000000 100%)',
-//           }}
-//         ></div>
-
-//         {/* Content on Back Side */}
-//         <div className="relative z-20">
-//           <h3 className="text-white text-center text-[1.875rem] font-bold">{label}</h3>
-//           <p className="text-white text-justify text-base font-normal mt-4">{description}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Card;
-
-
 'use client'; // Ensure this is a Client Component
 
 import React from 'react';
@@ -76,15 +9,17 @@ type CardProps = {
   label: string;
   description: string;
   bgImage?: string;
+  isActive?: boolean;
+  disableHover?: boolean;
 };
 
-const Card: React.FC<CardProps> = ({ imageSrc, label, description, bgImage }) => {
+const Card: React.FC<CardProps> = ({ imageSrc, label, description, bgImage, isActive, disableHover }) => {
   // Define animation variants
   const containerVariants = {
     initial: { y: 0, boxShadow: '0px 0px 0px rgba(0, 0, 0, 0)' },
     hover: {
-      y: -10, // Slide up by 10px
-      boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)', // Add shadow on hover
+      y: disableHover ? 0 : -10, // Slide up by 10px
+      boxShadow: disableHover ? '0px 0px 0px rgba(0, 0, 0, 0)' : '0px 10px 20px rgba(0, 0, 0, 0.2)', // Disable shadow if hover is disabled
       transition: {
         type: 'spring',
         stiffness: 300,
@@ -105,10 +40,11 @@ const Card: React.FC<CardProps> = ({ imageSrc, label, description, bgImage }) =>
 
   return (
     <motion.div
-      className="relative w-[31%] h-[28.125rem] rounded-[1.875rem] overflow-hidden cursor-pointer"
+      className="relative w-[31%] h-[28.125rem] min-w-[340px] rounded-[1.875rem] overflow-hidden cursor-pointer"
       variants={containerVariants}
       initial="initial"
-      whileHover="hover"
+      animate={isActive ? 'hover' : 'initial'}
+      whileHover={disableHover ? '' : 'hover'} 
     >
       {/* Front Side */}
       <motion.div
