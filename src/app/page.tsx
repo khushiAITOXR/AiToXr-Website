@@ -12,7 +12,7 @@ import HowWeWork from './sections/HowWeWork';
 import WhoWeHelp from './sections/WhoWeHelp';
 import WeUse from './sections/WeUse';
 import ServiceCard from './sections/WhatWedo';
-import Testimonials from './sections/Testimonials';
+// import Testimonials from './sections/Testimonials';
 import { useRouter } from 'next/navigation';
 import Slider from './components /Slider';
 

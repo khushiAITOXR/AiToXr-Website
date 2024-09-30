@@ -79,7 +79,7 @@ type GridProps = {
   variant?: 'primary' | 'secondary'; // Variant prop to switch between primary and secondary layouts
 };
 
-const Grid: React.FC<GridProps> = ({ items, defaultOpacity = 0.3, variant = 'primary' }) => {
+const Grid: React.FC<GridProps> = ({ items, variant = 'primary' }) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null); // State to track which grid item is hovered
 
   // Define grid columns to maintain 4 columns on mobile screens
