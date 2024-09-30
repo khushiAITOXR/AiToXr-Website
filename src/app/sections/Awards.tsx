@@ -126,7 +126,7 @@ const Awards: React.FC = () => {
         .slider {
           display: flex;
           width: max-content; /* Ensure the width of the content can grow dynamically */
-          animation: scroll 120s linear infinite; /* Infinite scrolling with longer duration for smoothness */
+          animation: scroll 300s linear infinite; /* Infinite scrolling with longer duration for smoothness */
         }
 
         /* Keyframes for the infinite loop */
