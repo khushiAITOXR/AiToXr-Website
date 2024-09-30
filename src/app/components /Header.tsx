@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Button from './Button'; // Import the button component
 import Dropdown from './Dropdown';
 import { useRouter } from 'next/navigation';
-import { MdClear } from 'react-icons/md';
+import { MdArrowDropDown, MdArrowForwardIos, MdClear } from 'react-icons/md';
+import { FaChevronDown } from 'react-icons/fa6';
 
   const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,6 +14,8 @@ import { MdClear } from 'react-icons/md';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev); // Toggle dropdown state
@@ -67,6 +70,56 @@ import { MdClear } from 'react-icons/md';
   const closeMenu = () => {
     setIsMenuOpen(false); // Function to close the menu
   };
+
+  const handleClickRoute = (route: string) => {
+    router.push(route); // Navigate programmatically to the route
+    closeMenu(); // Close the menu after navigation
+  };
+
+  const menuData = [
+    {
+      title: 'Services',
+      gradientText: true,
+      submenu: [
+        {
+          title: 'Engagement Models',
+          children: [
+            { title: 'Staff Augmentation', route: '/staff-augmentation' },
+            { title: 'Dedicated Team', route: '/dedicated-team' },
+            { title: 'Software Outsourcing', route: '/software-outsourcing' },
+          ],
+        },
+        {
+          title: 'Software Solutions',
+          children: [
+            { title: 'AI/ML Development', route: '/ai-ml-development' },
+            { title: 'AR/VR Development', route: '/ar-vr-development' },
+            { title: 'Data Science', route: '/data-science' },
+            { title: 'Generative AI & LLM', route: '/generative-ai-llm' },
+            { title: 'Web Development', route: '/web-development' },
+            { title: 'App Development', route: '/app-development' },
+            { title: 'E-commerce Development', route: '/ecommerce-development' },
+            { title: 'Digital Marketing', route: '/digital-marketing' },
+            { title: 'SAAS Products', route: '/saas-products' },
+          ],
+        },
+      ],
+    },
+    { title: 'Products', gradientText: true, submenu: [], route: '/products' },
+    { title: 'Industries', gradientText: true, submenu: [], route: '/industries' },
+    { title: 'Company', gradientText: true, submenu: [], route: '/company' },
+    { title: 'Insights', gradientText: true, submenu: [], route: '/insights' },
+    { title: 'Career', gradientText: true, submenu: [], route: '/career' },
+  ];
+
+  const handleSubmenuToggle = (menuTitle: string) => {
+    setActiveMenu(menuTitle === activeMenu ? null : menuTitle);
+  };
+
+  const handleChildToggle = (submenuTitle: string) => {
+    setActiveSubmenu(submenuTitle === activeSubmenu ? null : submenuTitle);
+  };
+  
 
 
   return (
@@ -176,25 +229,101 @@ import { MdClear } from 'react-icons/md';
         />
       )}
 
-      {/* Overlay for Mobile Menu */}
-      {isMenuOpen && (
-        <div
-          className="fixed top-0 left-0 z-50 w-full h-full bg-white flex flex-col items-start p-6 lg:w-[60%] lg:left-auto lg:right-0 lg:top-0 lg:bg-opacity-95 lg:bg-[#00000080]"
-        >
-          {/* X Icon to close the menu */}
-          <div className="mb-6 w-full flex justify-between items-center border-b-[1.5px] border-[#E45D25] pb-4">
-          <MdClear onClick={closeMenu}/>
-          <Image
-          alt='logo'
-          src='logo.svg'
-          width={100}
-          height={20}
-          />
-          </div>
+      {/* Overlay Menu */}
+{isMenuOpen && (
+  <div className="fixed top-0 left-0 z-50 w-full h-full bg-white flex flex-col items-start p-6 lg:w-[60%]">
+    {/* Close Icon */}
+    <div className=" w-full flex justify-between items-center border-b-[1.5px] border-[#E45D25] pb-4">
+      <MdClear className="text-black text-3xl cursor-pointer" onClick={closeMenu} />
+      <Image src="/logo.svg" alt="Logo" width={100} height={20} />
+    </div>
 
-      
+    {/* Menu Items */}
+    {menuData.map((menu) => (
+      <div key={menu.title} className="w-full border-b-[1px] border-[#D9D9D9]">
+        <div
+          className="flex justify-between items-center py-3 cursor-pointer"
+          onClick={() => handleSubmenuToggle(menu.title)}
+        >
+          {/* Icon before the text */}
+          <div className="flex items-center">
+            {menu.submenu.length > 0 && (
+              <>
+                {activeMenu === menu.title ? (
+                  <FaChevronDown className="text-[#E45D25] mr-2" />
+                ) : (
+                  <MdArrowForwardIos className="text-[#E45D25] mr-2" />
+                )}
+              </>
+            )}
+            <p
+              className={`text-[16px] font-bold ${
+                menu.gradientText
+                  ? 'bg-gradient-to-r from-[#E45D25] to-[#F58E1E] text-transparent bg-clip-text'
+                  : 'text-black'
+              }`}
+            >
+              {menu.title}
+            </p>
+          </div>
         </div>
-      )}
+
+        {/* Submenu */}
+        {activeMenu === menu.title && (
+          <div className="pl-6 border-b-[1px] border-[#D9D9D9]">
+            {menu.submenu.map((submenu) => (
+              <div key={submenu.title} className="w-full">
+                <div
+                  className="flex justify-between items-center py-2 cursor-pointer"
+                  onClick={() => handleChildToggle(submenu.title)}
+                >
+                  {/* Icon before the submenu text */}
+                  <div className="flex items-center">
+                    {submenu.children && (
+                      <>
+                        {activeSubmenu === submenu.title ? (
+                          <FaChevronDown className="text-[#E45D25] mr-2" />
+                        ) : (
+                          <MdArrowForwardIos className="text-[#E45D25] mr-2" />
+                        )}
+                      </>
+                    )}
+                    <p
+                      className="text-[16px] font-normal bg-gradient-to-r from-[#E45D25] to-[#F58E1E] text-transparent bg-clip-text"
+                    >
+                      {submenu.title}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Submenu Children */}
+                {activeSubmenu === submenu.title && (
+                  <div className="pl-6">
+                    {submenu.children.map((child) => (
+                            <p
+                              key={child.title}
+                              onClick={() => handleClickRoute(child.route)}
+                              className="text-[16px] text-black py-2 cursor-pointer"
+                            >
+                              {child.title}
+                            </p>
+                          ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+
+    {/* Call to Action Button */}
+    <div className='flex justify-center items-center mt-8 mx-auto'>
+    <Button variant="fill" label="Schedule a Call" onClick={closeMenu} />
+    </div>
+  </div>
+)}
+
     </>
   );
 };
