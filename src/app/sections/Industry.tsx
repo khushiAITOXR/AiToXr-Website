@@ -66,9 +66,9 @@ const Industry = forwardRef<HTMLElement, object>((_, ref) => {
   ];
 
   return (
-    <section ref={ref} className="p-8 py-16 w-[100%]">
+    <section ref={ref} className="py-8 lg:py-16 w-[100%]">
       {/* Section Title */}
-      <h2 className="text-center text-[#1E1E1E] font-bold text-5xl mb-16">
+      <h2 className="text-center text-[#1E1E1E] font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
         Industries We <span className="text-[#E45D25]">Serve</span>
       </h2>
 

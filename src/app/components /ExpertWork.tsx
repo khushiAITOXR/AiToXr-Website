@@ -14,15 +14,15 @@ const ExpertWork = forwardRef<HTMLElement>((_, ref) => {
     'Our staff augmentation experts work across a diverse range of industries and technologies, integrating seamlessly into your existing teams to deliver specialized solutions.';
 
   return (
-    <section ref={ref} className='py-16 w-full'>
+    <section ref={ref} className='py-8 lg:py-16 w-full'>
       {/* Title */}
-      <h2 className="text-center text-5xl font-bold leading-[145%] mb-8">
+      <h2 className="text-center font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
         {title.split(highlightedTitlePart)[0]}
         <span className="text-[#E45D25]">{highlightedTitlePart}</span>
       </h2>
 
       {/* Description */}
-      <p className="text-center text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
+      <p className="text-center text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
         {description}
       </p>
       <AnimatedImageGrid

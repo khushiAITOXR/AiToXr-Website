@@ -86,7 +86,7 @@ const Awards: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-16 bg-[rgba(243,243,243,1)] m-auto">
+    <section className="w-full py-8 lg:py-16 bg-[rgba(243,243,243,1)] m-auto">
       <div className="w-full px-6 mx-auto">
         {/* Section Title */}
         <h2 className="text-center text-[#1E1E1E] font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">

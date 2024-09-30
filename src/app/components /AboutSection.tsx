@@ -58,7 +58,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 
           {/* Paragraph - Constant content */}
           <div>
-            <p className="text-justify text-[#1E1E1E] text-[1.125rem] font-normal leading-[145%]">
+            <p className="text-justify text-[#1E1E1E] text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
               {paragraphText.split('\n').map((text, index) => (
                 <React.Fragment key={index}>
                   {text}
