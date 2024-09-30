@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Button from './Button'; // Import the button component
 import Dropdown from './Dropdown';
 import { useRouter } from 'next/navigation';
+import { MdClear } from 'react-icons/md';
 
   const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,6 +64,10 @@ import { useRouter } from 'next/navigation';
     setIsMenuOpen((prev) => !prev); // Toggle the hamburger menu
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false); // Function to close the menu
+  };
+
 
   return (
    <> 
@@ -100,7 +105,7 @@ import { useRouter } from 'next/navigation';
         </div>
 
       {/* Navigation */}
-      <nav className={`text-white text-center flex justify-between items-center w-[55%] lg:flex ${isMenuOpen ? 'flex' : 'hidden'} lg:w-auto lg:space-x-8`}>
+      <nav className={`text-white text-center flex justify-between items-center w-[55%] lg:flex ${isMenuOpen ? 'hidden' : 'hidden'} lg:w-auto lg:space-x-8`}>
           <a
             onClick={toggleDropdown}
             className={`cursor-pointer ${
@@ -169,6 +174,26 @@ import { useRouter } from 'next/navigation';
           rightDescription="You can hire our software developers in different ways. You can hire our software developers in different ways."
           closeDropdown={closeDropdown}
         />
+      )}
+
+      {/* Overlay for Mobile Menu */}
+      {isMenuOpen && (
+        <div
+          className="fixed top-0 left-0 z-50 w-full h-full bg-white flex flex-col items-start p-6 lg:w-[60%] lg:left-auto lg:right-0 lg:top-0 lg:bg-opacity-95 lg:bg-[#00000080]"
+        >
+          {/* X Icon to close the menu */}
+          <div className="mb-6 w-full flex justify-between items-center border-b-[1.5px] border-[#E45D25] pb-4">
+          <MdClear onClick={closeMenu}/>
+          <Image
+          alt='logo'
+          src='logo.svg'
+          width={100}
+          height={20}
+          />
+          </div>
+
+      
+        </div>
       )}
     </>
   );
