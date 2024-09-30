@@ -21,15 +21,15 @@ const phoneNumber3 = '+91 9876-082332';
 
 const Contact = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section ref={ref} className="w-full py-16 h-[880px] flex justify-center items-start bg-white m-auto">
-      <div className=" w-[82%] px-6">
+    <section ref={ref} className="w-full py-16 flex justify-center items-start bg-white m-auto">
+      <div className=" w-[82%]">
         {/* Section Title */}
-        <h2 className="text-center text-[#1E1E1E] font-bold text-5xl">
+        <h2 className="text-center text-[#1E1E1E] font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           Contact <span className="text-[#E45D25]">Us</span>
         </h2>
 
         {/* Description */}
-        <p className="text-center text-[#1E1E1E] text-lg mt-2 font-normal">
+        <p className="text-center text-[#1E1E1E] text-lg mt-2 font-normal text-[14px] sm:text-base md:text-lg lg:text-lg">
           We&apos;re enthusiastic about collaborating with you to bring your vision to life.
         </p>
 
@@ -73,7 +73,7 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
               ></textarea>
 
               {/* Button */}
-              <Button variant="default" label="Let's Connect" onClick={() => alert('Message sent!')} style={{
+              <Button variant="fill" label="Let's Connect" onClick={() => alert('Message sent!')} style={{
                 alignSelf:"flex-start"
               }}/>
             </form>

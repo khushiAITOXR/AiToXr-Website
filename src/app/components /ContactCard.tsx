@@ -65,7 +65,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
         >
           {/* Heading */}
           <h3
-            className={`text-right text-[2.25rem] font-[700] ${
+            className={`text-right font-[700] text-[1.25rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] ${
               isHovered
                 ? 'text-white' // On hover, transition to white
                 : 'bg-gradient-to-r from-[#E45D25] to-[#F58E1E] text-transparent bg-clip-text' // Gradient text before hover
@@ -77,7 +77,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
             {heading}
           </h3>
           {/* Contact Details */}
-          <div className="text-lg font-normal text-right">
+          <div className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-lg font-normal text-right">
             <p>{contactDetail.mainAddress}</p>
             <p>{contactDetail.additional}</p>
             <p>{contactDetail.phoneNumber}</p>
