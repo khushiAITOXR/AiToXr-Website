@@ -46,7 +46,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
         {/* Right Column - Content - Constant content for this section */}
         <div className="flex flex-col lg:w-[65%] w-full items-center lg:items-start">
           {/* Fixed Content for the Section */}
-          <div className="mb-4 lg:mb-8 mx-auto">
+          <div className="mb-4 lg:mb-0 mx-auto lg:mx-0 lg:h-[70px]">
             <h1 className="text-[#1E1E1E] text-center font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
               {listItems[0].title.split(' ').map((word, index, array) => (
                 <span key={index} style={{ color: index === array.length - 1 ? '#E45D25' : '#1E1E1E' }}>
@@ -58,7 +58,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 
           {/* Paragraph - Constant content */}
           <div>
-            <p className="text-justify text-[#1E1E1E] text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
+            <p className="text-center lg:text-justify text-[#1E1E1E] text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal w-[90%] lg:w-[95%] mx-auto lg:mx-0">
               {paragraphText.split('\n').map((text, index) => (
                 <React.Fragment key={index}>
                   {text}

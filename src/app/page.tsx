@@ -160,7 +160,7 @@ const handleClick = (route: string) => {
   </div>
 
   {/* Bottom Section */}
-  <div className="lg:absolute relative lg:bottom-0 bottom-[8.5%] left-0 w-full h-[20%] sm:h-[20vh] md:h-[140px] bg-black bg-opacity-50 flex flex-col items-center justify-center lg:h-[20%] lg:flex lg:flex-col lg:justify-center lg:items-center">
+  <div className="lg:absolute relative py-2 lg:py-2  lg:bottom-0 bottom-[8.5%] left-0 w-full h-[15%] sm:h-[15%] md:h-[15%] bg-black bg-opacity-50 flex flex-col items-center justify-center lg:h-[22%] lg:flex lg:flex-col lg:justify-center lg:items-center">
     <h3 className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl">
       Our Brand Work for
     </h3>

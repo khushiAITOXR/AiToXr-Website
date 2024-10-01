@@ -92,10 +92,10 @@ import { FaChevronDown } from 'react-icons/fa6';
         {
           title: 'Software Solutions',
           children: [
-            { title: 'AI/ML Development', route: '/ai-ml-development' },
-            { title: 'AR/VR Development', route: '/ar-vr-development' },
+            { title: 'AI/ML Development', route: '/ai-ml' },
+            { title: 'AR/VR Development', route: '/ai-vr' },
             { title: 'Data Science', route: '/data-science' },
-            { title: 'Generative AI & LLM', route: '/generative-ai-llm' },
+            { title: 'Generative AI & LLM', route: '/generative-ai' },
             { title: 'Web Development', route: '/web-development' },
             { title: 'App Development', route: '/app-development' },
             { title: 'E-commerce Development', route: '/ecommerce-development' },

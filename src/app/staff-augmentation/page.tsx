@@ -258,7 +258,7 @@ For businesses looking to remain agile and competitive, staff augmentation offer
     </section>
 
 
-        {/* <WhyAugment ref={whyAugmentSectionRef} /> */}
+        <WhyAugment ref={whyAugmentSectionRef} />
 
         <ExpertWork ref={ExpertWorkSectionRef}/>
 

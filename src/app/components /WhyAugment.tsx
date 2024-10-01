@@ -52,15 +52,15 @@ const WhyAugment = forwardRef<HTMLElement, object>((_, ref) => {
     'Staff augmentation is the process of adding talent to your existing team through a third party. This could be anything from 10 engineers joining 10 different teams, to a single developer with niche expertise.';
 
   return (
-    <section ref={ref} className="py-16 bg-[#F3F3F3] w-full">
+    <section ref={ref} className="py-8 lg:py-16 bg-[#F3F3F3] w-full">
       {/* Title */}
-      <h2 className="text-center text-5xl font-bold leading-[145%] mb-8">
+      <h2 className="text-center font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl leading-[145%] mb-8">
         {title.split(highlightedTitlePart)[0]}
         <span className="text-[#E45D25]">{highlightedTitlePart}</span>
       </h2>
 
       {/* Description */}
-      <p className="text-center text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
+      <p className="text-center text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
         {description}
       </p>
 
