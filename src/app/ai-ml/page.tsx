@@ -200,7 +200,7 @@ const AiML: React.FC = () => {
         sectionTitle="Our Expertly Crafted Solutions"
         highlightedTitlePart="Solutions"
         items={solutionItems}
-        sectionStyle={{paddingLeft: "15%", paddingRight:"15%"}}
+         className="lg:px-[15%] px-[10%]"
         ref={CraftedSolutionsSectionRef}
       />
 
@@ -223,7 +223,7 @@ const AiML: React.FC = () => {
        <Industry/>
 
        {/* Client Testimonials */}
-       <Testimonials/>
+       {/* <Testimonials/> */}
 
        {/* FAQs */}
        <FaqSection faqItems={faqItems} />
