@@ -114,7 +114,7 @@ const Table: React.FC<TableProps> = ({ columns }) => {
                   key={colIndex}
                   className={`py-4 px-6 ${colIndex === 0 ? 'text-[#E45D25] text-left' : 'hidden md:table-cell'}`} // Hide other columns on small screens, text-left for the first column
                   style={{
-                    fontSize: '14px', // Minimum font size for smaller screens
+                    // fontSize: '14px', // Minimum font size for smaller screens
                     fontSize: 'clamp(14px, 2vw, 18px)', // Responsive font size for larger screens
                     fontStyle: 'normal',
                     fontWeight: colIndex === 0 ? 500 : 400,

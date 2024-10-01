@@ -232,7 +232,7 @@ export default function AnimatedImageGrid({
                 {column.map((image, imageIndex) => (
                   <div
                     key={`duplicate-${imageIndex}`}
-                    className="w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[12rem] h-[3.2rem] bg-white overflow-hidden flex items-center justify-center"
+                    className="w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[12rem] h-[3.2rem] lg:h-[6rem] bg-white overflow-hidden flex items-center justify-center"
                     style={{
                       backgroundColor: backgroundColors[imageIndex % backgroundColors.length],
                       // height: '78rem !important', // Fixed height
@@ -279,7 +279,7 @@ export default function AnimatedImageGrid({
               {column.map((image, imageIndex) => (
                 <div
                   key={imageIndex}
-                  className="w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[12rem] h-[3.2rem]  bg-white rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
+                  className="w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[12rem] h-[3.2rem] lg:h-[6rem] bg-white rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
                   style={{
                     backgroundColor: backgroundColors[imageIndex % backgroundColors.length],
                     // minHeight: '4rem', // Fixed height
@@ -304,7 +304,7 @@ export default function AnimatedImageGrid({
               {column.map((image, imageIndex) => (
                 <div
                   key={`duplicate-${imageIndex}`}
-                  className="w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[12rem] h-[3.2rem] bg-white rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
+                  className="w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[12rem] h-[3.2rem] lg:h-[6rem] bg-white rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
                   style={{
                     backgroundColor: backgroundColors[imageIndex % backgroundColors.length],
                     // height: '78rem !important',
