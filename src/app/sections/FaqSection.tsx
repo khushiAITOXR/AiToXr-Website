@@ -17,7 +17,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ faqItems, customStyles }) => {
     setOpenIndex(prevIndex => (prevIndex === index ? null : index));
   };
   return (
-    <section className="w-[100%] py-20 bg-white m-auto" style={customStyles}>
+    <section className="w-[100%] py-8 lg:py-16 bg-white m-auto" style={customStyles}>
       <div className="w-[82%] mx-auto">
         {/* Section Title */}
         <h2 className="text-center text-[#1E1E1E] font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">

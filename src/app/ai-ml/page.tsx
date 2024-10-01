@@ -5,7 +5,7 @@ import HeroSection from '../components /HeroSection';
 import AboutSection from '../components /AboutSection';
 import Industry from '../sections/Industry';
 import FaqSection from '../sections/FaqSection';
-import Testimonials from '../sections/Testimonials';
+// import Testimonials from '../sections/Testimonials';
 import Awards from '../sections/Awards';
 import Contact from '../sections/Contact';
 import BlogPost from '../sections/BlogPost';
@@ -200,7 +200,7 @@ const AiML: React.FC = () => {
         sectionTitle="Our Expertly Crafted Solutions"
         highlightedTitlePart="Solutions"
         items={solutionItems}
-        sectionStyle={{paddingLeft: "15%", paddingRight:"15%"}}
+         className="lg:px-[15%] px-[10%]"
         ref={CraftedSolutionsSectionRef}
       />
 
@@ -223,7 +223,7 @@ const AiML: React.FC = () => {
        <Industry/>
 
        {/* Client Testimonials */}
-       <Testimonials/>
+       {/* <Testimonials/> */}
 
        {/* FAQs */}
        <FaqSection faqItems={faqItems} />

@@ -1,18 +1,19 @@
 'use client'; // You can remove this if the page doesn't require client-side rendering
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import HeroSection from '../components /HeroSection';
 import AboutSection from '../components /AboutSection';
 import Industry from '../sections/Industry';
 import FaqSection from '../sections/FaqSection';
-import Testimonials from '../sections/Testimonials';
+// import Testimonials from '../sections/Testimonials';
 import Awards from '../sections/Awards';
 import Contact from '../sections/Contact';
 import BlogPost from '../sections/BlogPost';
 import WhyAugment from '../components /WhyAugment';
 import BlogPostCard from '../components /BlogPostCard';
 import ExpertWork from '../components /ExpertWork';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const StaffAugmentation: React.FC = () => {
   const AboutSectionRef = useRef<HTMLElement>(null);
@@ -20,9 +21,10 @@ const StaffAugmentation: React.FC = () => {
   const WhatWeProvideSectionRef =  useRef<HTMLElement>(null);
   const whyAugmentSectionRef = useRef<HTMLElement>(null);
   const ExpertWorkSectionRef = useRef<HTMLElement>(null);
-  const TestimonialsSectionRef = useRef<HTMLElement>(null);
+  // const TestimonialsSectionRef = useRef<HTMLElement>(null);
   const IndustrySectionRef = useRef<HTMLElement>(null);
   const ContactSectionRef = useRef<HTMLElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
 
 
@@ -133,6 +135,14 @@ For businesses looking to remain agile and competitive, staff augmentation offer
   const description = `AItoXR’s staff augmentation services offer businesses the opportunity to quickly access top-tier technical talent without the overhead of full-time employment.
    We deliver highly skilled professionals who seamlessly integrate into your existing teams, bringing expertise in cutting-edge technologies and methodologies to support your project goals.`;
     
+   // Ensure the first card is rendered initially and auto-slide every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % visibleProjects.length);
+    }, 4000);
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, [visibleProjects.length]);
+  
   return (
     <>
       <HeroSection {...heroSectionProps} />
@@ -143,78 +153,110 @@ For businesses looking to remain agile and competitive, staff augmentation offer
         onSectionChange={handleSectionChange}
         ref={AboutSectionRef}
       />
-      <section  ref={benefitsSectionRef} className='bg-[#F3F3F3] py-20 m-auto w-full'>
-        <h2 className='text-center font-bold text-[3rem] mb-4'>Benefits of Staff <span className='text-[#E45D25;]'>Augmentation</span></h2>
-        <p className='text-center text-[1.125rem] w-[82%] m-auto mb-8'>Staff augmentation offers businesses the flexibility to scale their workforce according to project demands without the long-term commitment of hiring full-time employees. It allows access to specialized skills on-demand, reduces operational costs, and ensures faster project delivery by filling skill gaps quickly</p>
-        <div className='flex justify-center gap-32 w-[82%] m-auto'>
-          <div className='w-[15%] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
-          <Image 
-            src="/badge.svg" 
-            alt="badge icon"
-            height={69}
-            width={69}
-            />
-            <h3 className='text-center text-[14px] font-medium  mt-4'>TOP Experts</h3>
-          </div>
-          <div className='w-[15%] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
-            <Image 
-            src="/chatting.svg" 
-            alt="chat icon"
-            height={69}
-            width={69}
-            />
-            <h3 className='text-center text-[14px] font-medium mt-4'>Streamline Communication</h3>
-          </div>
-          <div className='w-[15%] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-2'>
-            <Image 
-            src="/time-left.svg" 
-            alt="watch icon"
-            height={57}
-            width={57}
-            />
-            <h3 className='text-center text-[14px] font-medium  mt-4'>Saves Recruitment Time</h3>
-          </div>
-          <div className='w-[15%] h-[140px]  border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4'>
-            <Image 
-            src="/heart.svg" 
-            alt="heart icon"
-            height={62}
-            width={62}
-            />
-            <h3 className='text-center text-[14px] font-medium  mt-4'>Healthy
-            Team</h3>
-            
-          </div>
-        </div>
-      </section>
+
+<section ref={benefitsSectionRef} className="bg-[#F3F3F3] py-8 lg:py-16 m-auto w-full">
+  {/* Title */}
+  <h2 className="text-center font-bold text-3xl sm:text-3xl md:text-4xl lg:text-[3rem] mb-4">
+    Benefits of Staff <span className="text-[#E45D25]">Augmentation</span>
+  </h2>
+
+  {/* Paragraph */}
+  <p className="text-center text-base sm:text-lg md:text-xl lg:text-[1.125rem] w-[82%] m-auto mb-8">
+    Staff augmentation offers businesses the flexibility to scale their workforce according to project demands
+    without the long-term commitment of hiring full-time employees. It allows access to specialized skills on-demand,
+    reduces operational costs, and ensures faster project delivery by filling skill gaps quickly.
+  </p>
+
+  {/* Benefits Icons Grid */}
+    <div className="grid grid-cols-2 gap-8 lg:flex lg:justify-center lg:gap-16 w-[82%] m-auto">
+    {/* Benefit 1 */}
+    <div
+      className="min-w-[178px] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4"
+    >
+      <Image src="/badge.svg" alt="badge icon" height={69} width={69} />
+      <h3 className="text-center text-[14px] font-medium mt-4">TOP Experts</h3>
+    </div>
+
+    {/* Benefit 2 */}
+    <div
+      className="min-w-[178px] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4"
+    >
+      <Image src="/chatting.svg" alt="chat icon" height={69} width={69} />
+      <h3 className="text-center text-[14px] font-medium mt-4">Streamline Communication</h3>
+    </div>
+
+    {/* Benefit 3 */}
+    <div
+      className="min-w-[178px] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-2"
+    >
+      <Image src="/time-left.svg" alt="watch icon" height={57} width={57} />
+      <h3 className="text-center text-[14px] font-medium mt-4">Saves Recruitment Time</h3>
+    </div>
+
+    {/* Benefit 4 */}
+    <div
+      className="min-w-[178px] h-[140px] border-[2px] border-[#E45D25] rounded-[20px] flex flex-col items-center justify-center p-4"
+    >
+      <Image src="/heart.svg" alt="heart icon" height={62} width={62} />
+      <h3 className="text-center text-[14px] font-medium mt-4">Healthy Team</h3>
+    </div>
+  </div>
+</section>
 
 
-      <section ref={WhatWeProvideSectionRef} className="py-16 w-full m-auto">
-          <h2 className="text-center text-5xl font-bold leading-[145%] mb-8">
-            {title.split(highlightedTitlePart)[0]}
-            <span className="text-[#E45D25]"> {highlightedTitlePart} </span>
-            {title.split(highlightedTitlePart)[1]}
-          </h2>
+<section ref={WhatWeProvideSectionRef} className="py-8 lg:py-16 w-full m-auto">
+      {/* Heading */}
+      <h2 className="text-center font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl leading-[145%] mb-8">
+        {title.split(highlightedTitlePart)[0]}
+        <span className="text-[#E45D25]"> {highlightedTitlePart} </span>
+        {title.split(highlightedTitlePart)[1]}
+      </h2>
 
-          {/* Description */}
-          <p className="text-center text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
-            {description}
-          </p>
+      {/* Description */}
+      <p className="text-center text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal leading-[167%] mx-auto w-[82%] mb-12">
+        {description}
+      </p>
 
-          {/* Project Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 mx-auto w-[82%] justify-items-center">
-            {visibleProjects.map((project, index) => (
+      {/* Project Cards - Grid for larger screens */}
+      <div className="grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 mx-auto w-[82%] justify-items-center hidden md:grid">
+        {visibleProjects.map((project, index) => (
+          <BlogPostCard
+            key={index}
+            bgImage={project.bgImage}
+            topic={project.topic}
+            description={project.description}
+            type="project"
+          />
+        ))}
+      </div>
+
+      {/* Slider for smaller screens <= 768px */}
+      <div className="md:hidden w-full overflow-auto px-6 mx-auto">
+        <div className="w-full flex justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="w-full"
+            >
+              {visibleProjects[activeIndex] && (
               <BlogPostCard
-                key={index}
-                bgImage={project.bgImage}
-                topic={project.topic}
-                description={project.description}
-                type="project" // Set to 'project'
+                bgImage={visibleProjects[activeIndex]?.bgImage || visibleProjects[0]?.bgImage}
+                topic={visibleProjects[activeIndex]?.topic || visibleProjects[0]?.topic}
+                description={visibleProjects[activeIndex]?.description || visibleProjects[0]?.description}
+                type="project"
               />
-            ))}
-          </div>
+            )}
 
-        </section>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+
 
         <WhyAugment ref={whyAugmentSectionRef} />
 
@@ -224,7 +266,7 @@ For businesses looking to remain agile and competitive, staff augmentation offer
        <Industry ref={IndustrySectionRef}/>
 
        {/* Client Testimonials */}
-       <Testimonials ref={TestimonialsSectionRef}/>
+       {/* <Testimonials ref={TestimonialsSectionRef}/> */}
 
        {/* FAQs */}
        <FaqSection faqItems={faqItems} />

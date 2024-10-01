@@ -22,10 +22,10 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
     };
 
   return (
-    <section ref={ref} className={`py-16 w-full`} style={{ backgroundColor }}>
+    <section ref={ref} className={`py-8 lg:py-16 w-full`} style={{ backgroundColor }}>
       <div className="flex flex-col lg:flex-row mx-auto gap-12 w-[82%]">
         {/* Left Column - List of items */}
-        <div className="flex flex-col w-[35%]">
+        <div className="hidden lg:flex  flex-col w-[35%]">
           {listItems.map((item) => (
             <div
               key={item.id}
@@ -44,10 +44,10 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
         </div>
 
         {/* Right Column - Content - Constant content for this section */}
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:w-[65%] w-full items-center lg:items-start">
           {/* Fixed Content for the Section */}
-          <div className="mb-8">
-            <h1 className="text-[#1E1E1E] font-bold text-[3rem] leading-[145%]">
+          <div className="mb-4 lg:mb-0 mx-auto lg:mx-0 lg:h-[70px]">
+            <h1 className="text-[#1E1E1E] text-center font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
               {listItems[0].title.split(' ').map((word, index, array) => (
                 <span key={index} style={{ color: index === array.length - 1 ? '#E45D25' : '#1E1E1E' }}>
                   {word}{' '}
@@ -58,7 +58,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 
           {/* Paragraph - Constant content */}
           <div>
-            <p className="text-justify text-[#1E1E1E] text-[1.125rem] font-normal leading-[145%]">
+            <p className="text-center lg:text-justify text-[#1E1E1E] text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal w-[90%] lg:w-[95%] mx-auto lg:mx-0">
               {paragraphText.split('\n').map((text, index) => (
                 <React.Fragment key={index}>
                   {text}

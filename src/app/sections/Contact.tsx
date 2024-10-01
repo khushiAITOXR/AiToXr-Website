@@ -21,7 +21,7 @@ const phoneNumber3 = '+91 9876-082332';
 
 const Contact = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section ref={ref} className="w-full py-16 flex justify-center items-start bg-white m-auto">
+    <section ref={ref} className="w-full py-8 lg:py-16 flex justify-center items-start bg-white m-auto">
       <div className=" w-[82%]">
         {/* Section Title */}
         <h2 className="text-center text-[#1E1E1E] font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
@@ -29,12 +29,12 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
         </h2>
 
         {/* Description */}
-        <p className="text-center text-[#1E1E1E] text-lg mt-2 font-normal text-[14px] sm:text-base md:text-lg lg:text-lg">
+        <p className="text-center text-[#1E1E1E] text-base sm:text-lg md:text-xl lg:text-[1.125rem] font-normal leading-[167%] mx-auto w-[90%] mb-12">
           We&apos;re enthusiastic about collaborating with you to bring your vision to life.
         </p>
 
         {/* Form and Right Column */}
-        <div className="flex flex-col justify-center lg:flex-row mt-10 gap-8 h-[80%] w-[98%] m-auto">
+        <div className="flex flex-col justify-center lg:flex-row gap-8 h-[80%] w-[98%] m-auto">
           {/* Form Section */}
           <div className="flex-1">
             <form className="space-y-6 h-[100%] flex flex-col justify-between">

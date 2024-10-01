@@ -44,9 +44,9 @@ const ProjectSection = forwardRef<HTMLElement, ProjectSectionProps>(
   ].slice(0, visibleCards); // Ensures we have only 'visibleCards' number of cards visible
 
   return (
-    <section ref={ref} className="py-16 w-full">
+    <section ref={ref} className="py-8 lg:py-16 w-full">
       {/* Title */}
-      <h2 className="text-center text-5xl font-bold leading-[145%] mb-8">
+      <h2 className="text-center font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
         {title.split(highlightedTitlePart)[0]}
         <span className="text-[#E45D25]"> {highlightedTitlePart} </span>
         {title.split(highlightedTitlePart)[1]}
