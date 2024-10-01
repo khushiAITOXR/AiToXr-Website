@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Button from './Button'; // Import the button component
 import Dropdown from './Dropdown';
 import { useRouter } from 'next/navigation';
-import { MdArrowDropDown, MdArrowForwardIos, MdClear } from 'react-icons/md';
+import { MdArrowForwardIos, MdClear } from 'react-icons/md';
 import { FaChevronDown } from 'react-icons/fa6';
 
   const Header: React.FC = () => {

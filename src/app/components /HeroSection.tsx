@@ -128,7 +128,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   heroSectionTextLine3,
   paragraphText2,
   buttonLabel,
-  logoTitle,
   onButtonClick,
 }) => {
   const router = useRouter();

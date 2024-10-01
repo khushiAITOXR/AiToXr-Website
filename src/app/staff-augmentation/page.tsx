@@ -6,7 +6,7 @@ import HeroSection from '../components /HeroSection';
 import AboutSection from '../components /AboutSection';
 import Industry from '../sections/Industry';
 import FaqSection from '../sections/FaqSection';
-import Testimonials from '../sections/Testimonials';
+// import Testimonials from '../sections/Testimonials';
 import Awards from '../sections/Awards';
 import Contact from '../sections/Contact';
 import BlogPost from '../sections/BlogPost';
@@ -21,7 +21,7 @@ const StaffAugmentation: React.FC = () => {
   const WhatWeProvideSectionRef =  useRef<HTMLElement>(null);
   const whyAugmentSectionRef = useRef<HTMLElement>(null);
   const ExpertWorkSectionRef = useRef<HTMLElement>(null);
-  const TestimonialsSectionRef = useRef<HTMLElement>(null);
+  // const TestimonialsSectionRef = useRef<HTMLElement>(null);
   const IndustrySectionRef = useRef<HTMLElement>(null);
   const ContactSectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
