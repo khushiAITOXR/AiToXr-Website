@@ -1,6 +1,5 @@
 'use client'; // You can remove this if the page doesn't require client-side rendering
 
-import BlogPost from '../sections/BlogPost';
 import Contact from '../sections/Contact';
 import Banner from './Banner';
 import HeroSection from './HeroSection';
