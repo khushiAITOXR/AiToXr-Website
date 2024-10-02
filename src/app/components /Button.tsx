@@ -6,7 +6,7 @@ type ButtonProps = {
   label: string;
   onClick?: () => void;
   style?: React.CSSProperties;
-  variant?: 'default' | 'fill'; // 'default' as outline, 'fill' as the solid variant
+  variant?: 'default' | 'fill' | 'white'; // 'default' as outline, 'fill' as the solid variant
 };
 
 const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'default' }) => {
@@ -30,6 +30,12 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'defau
     bg-gradient-to-r from-gr-start to-gr-end
   `.replace(/\s+/g, ' ').trim();
 
+  const whiteClasses = `
+  text-white
+  border-2 border-white 
+  bg-transparent
+`.replace(/\s+/g, ' ').trim();
+
   // Hover effect for default variant
   const inlineHoverStyle =
     variant === 'default'
@@ -39,12 +45,23 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, style, variant = 'defau
           transition: 'all 0.3s ease-in-out',
           borderColor: isHovered ? 'transparent' : '#E45D25',
         }
+      : variant === 'white'
+        ? {
+            color: isHovered ? '#F58E1E' : '#FFFFFF',
+            backgroundColor: 'transparent',
+            borderColor: isHovered ? '#F58E1E' : 'white',
+          }
       : {
           boxShadow: 'none', // No extra shadow for fill variant
         };
 
   // Determine which classes to apply based on the variant prop
-  const variantClasses = variant === 'default' ? defaultClasses : fillClasses;
+  const variantClasses =
+    variant === 'default'
+      ? defaultClasses
+      : variant === 'fill'
+      ? fillClasses
+      : whiteClasses;
 
   // Combine base styles with variant-specific styles
   const classes = `${baseStyle} ${variantClasses}`;

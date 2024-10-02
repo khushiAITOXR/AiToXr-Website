@@ -82,7 +82,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Button from '../components /Button'; // Adjusted the path for Button component
 
@@ -107,6 +107,25 @@ const ProductCard: React.FC<ProductCardProps> = ({
   imageOnRight = false, // Default to false
   backgroundColor = 'white',
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Effect to check screen width on initial render and window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener to resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <section className='py-8' style={{ backgroundColor }}>
       <div className="flex flex-col lg:flex-row md:gap-8 items-center justify-between p-8 w-[82%] m-auto">
@@ -144,10 +163,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
           {/* Button */}
           <div className="mb-4 lg:mb-[4%] xl:mb-[10%] 2xl:mb-[7%] text-left">
-            <Button variant="default" label={buttonLabel} onClick={onButtonClick} />
+            <Button
+             variant={isMobile ? 'fill' : 'default'}
+             label={buttonLabel}
+             onClick={onButtonClick} />
           </div>
         </div>
       </div>
+      
     </section>
   );
 };

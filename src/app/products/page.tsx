@@ -2,6 +2,7 @@
 
 import BlogPost from '../sections/BlogPost';
 import Contact from '../sections/Contact';
+import Banner from './Banner';
 import HeroSection from './HeroSection';
 import ProductCard from './ProductCard';
 
@@ -68,7 +69,7 @@ const Products: React.FC = () => {
       <ProductCard {...productCardProps1} />
       <ProductCard {...productCardProps2} />
       <ProductCard {...productCardProps1} />
-      
+      <Banner />
 
       <Contact />
 
