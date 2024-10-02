@@ -58,7 +58,7 @@ const handleClick = (route: string) => {
 
   return (
     <>
-     <section className="relative w-full h-screen -mt-[75px] overflow-hidden lg:border-b-[10px]"
+     <section className="relative w-full lg:h-screen  -mt-[75px] overflow-hidden lg:border-b-[10px]"
   style={{
     borderImageSource: 'linear-gradient(90deg, #E45D25 0%, #F58E1E 100%)',
     borderImageSlice: 1,
@@ -124,7 +124,7 @@ const handleClick = (route: string) => {
   </div>
 
   {/* Text Content for all screens smaller than 1024px */}
-  <div className="flex flex-col items-start justify-start w-full px-6 sm:px-8 lg:mt-0 lg:hidden mt-[8vh] relative bottom-[10%]">
+  <div className="flex flex-col items-start justify-start w-full px-6 sm:px-8 lg:mt-0 lg:hidden mt-[8vh] relative bottom-[50px]">
     
     {/* Paragraph 1 - Visible on <1024px */}
     <p className="flex items-center text-black font-normal text-[14px] sm:text-[16px] md:text-[18px] mb-4">
@@ -160,7 +160,7 @@ const handleClick = (route: string) => {
   </div>
 
   {/* Bottom Section */}
-  <div className="lg:absolute relative py-2 lg:py-2  lg:bottom-0 left-0 w-full h-[15%] sm:h-[15%] md:h-[15%] bg-black bg-opacity-50 flex flex-col items-center justify-center lg:h-[22%] lg:flex lg:flex-col lg:justify-center lg:items-center">
+  <div className="lg:absolute relative py-2 lg:py-2 mt-4 lg:mt-0  lg:bottom-0 left-0 w-full h-[100px] bg-black bg-opacity-50 flex flex-col items-center justify-center lg:h-[22%] lg:flex lg:flex-col lg:justify-center lg:items-center">
     <h3 className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl">
       Our Brand Work for
     </h3>
