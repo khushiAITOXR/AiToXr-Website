@@ -9,10 +9,10 @@ export const AboutCompany: React.FC = () => {
   const description = `Our mission is to deliver creative and innovative solutions that help businesses succeed in the fast-paced digital world. With over 10 years of experience, we have designed and developed award-winning platforms that have generated billions in revenue and have been trusted by millions of users, both startups and enterprises alike. Our mission is to deliver creative and innovative solutions that help businesses succeed in the fast-paced digital world. With over 10 years of experience, we have designed and developed award-winning platforms that have generated billions in revenue and have been trusted by millions of users, both startups and enterprises alike. With over 10 years of experience, we have designed and developed award-winning platforms that have generated billions in revenue.`;
 
   return (
-    <section className="py-20 flex flex-col items-center justify-center">
+    <section className="py-10 xl:py-20 flex flex-col items-center justify-center">
       <div className="flex flex-col xl:flex-row items-center justify-between w-[70%] mx-auto gap-16 m-auto">
 
-      <h1 className="xl:hidden text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px] font-bold mb-6 text-center xl:text-left">
+      <h1 className="xl:hidden text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px] font-bold mb-0 xl:mb-6 text-center xl:text-left">
             About <span className="text-[#E45D25]">Company</span>
           </h1>
         {/* Image Section */}
@@ -49,7 +49,7 @@ export const WeAreRemote: React.FC = () => {
     const starIcon = '/star-icon.svg';
   
     return (
-      <section className="py-20 flex flex-col items-center justify-center">
+      <section className="py-10 xl:py-20 flex flex-col items-center justify-center">
         <div className="w-[70%] mx-auto">
           {/* Title Section */}
           <h1 className="text-center text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-4 xl:text-left">
@@ -102,7 +102,7 @@ export const WeAreRemote: React.FC = () => {
     const imageSrc1 = '/company-3.png';
   
     return (
-      <section className="py-20 w-[82%] m-auto">
+      <section className="py-10 xl:py-20 w-[82%] m-auto">
         <div className="mx-auto">
 
           <h1 className="text-center text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-4 xl:text-right ml-auto">

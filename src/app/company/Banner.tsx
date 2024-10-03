@@ -11,7 +11,7 @@ const Banner: React.FC = () =>{
             <h2 className=" text-white text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-8 text-center ">
                {title}
                 </h2>
-            <p className="text-center w-[50%] m-auto text-white mt-6">{description}</p>
+            <p className="text-justify xl:text-center  w-[50%] m-auto text-white mt-6">{description}</p>
             <div className="flex justify-center mt-10">
             <Button variant={'white'} label="Let's Connect" onClick={handleButtonClick}/>
             </div>
