@@ -168,8 +168,7 @@ import { FaChevronDown } from 'react-icons/fa6';
             Services
           </a>
           <a
-            href="#products"
-            onClick={() => setActiveLink('products')}
+             onClick={() => handleClick('/products', 'products')}
             className={`cursor-pointer ${
               activeLink === 'products' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
             }`}
@@ -186,8 +185,7 @@ import { FaChevronDown } from 'react-icons/fa6';
             Industries
           </a>
           <a
-            href="#company"
-            onClick={() => setActiveLink('company')}
+             onClick={() => handleClick('/company', 'company')}
             className={`cursor-pointer ${
               activeLink === 'company' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
             }`}
@@ -243,7 +241,13 @@ import { FaChevronDown } from 'react-icons/fa6';
       <div key={menu.title} className="w-full border-b-[1px] border-[#D9D9D9]">
         <div
           className="flex justify-between items-center py-3 cursor-pointer"
-          onClick={() => handleSubmenuToggle(menu.title)}
+          onClick={() => {
+            if (menu.submenu.length === 0 && menu.route) {
+              handleClickRoute(menu.route); // If no submenu, navigate directly
+            } else {
+              handleSubmenuToggle(menu.title); // Otherwise, toggle submenu
+            }
+          }}
         >
           {/* Icon before the text */}
           <div className="flex items-center">
