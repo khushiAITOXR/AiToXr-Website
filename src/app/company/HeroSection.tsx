@@ -3,8 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 // import { useRouter } from 'next/navigation';
-import Button from '../components /Button';
 import Awards from './Awards';
+import Slider from './Slider';
 
 type HeroSectionProps = {
   backgroundImage?: string;
@@ -21,10 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   heroSectionTextLine1,
   heroSectionTextLine3,
-  text,
   paragraphText2,
-  buttonLabel,
-  onButtonClick,
 }) => {
   // const router = useRouter();
   // const handleClick = (route: string) => {
@@ -65,15 +62,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           {paragraphText2}
         </p>
 
-        <div className='bg-[#F3F3F3] lg:hidden flex flex-col  justify-between items-center p-10  xl:p-12 w-full h-[288px]'>
-            <div className='text-black text-[14px] text-center sm:text-base md:text-base lg:text-lg xl:text-xl  w-[75%] mb-6 '>{text}</div>
-            <Button variant="fill" label={buttonLabel} onClick={onButtonClick} />
+        <div className='bg-[#F3F3F3] lg:hidden flex flex-col  justify-between items-center py-12  xl:p-12 w-full h-[288px]'>
+            <h2 className='w-[82%] text-center text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl font-bold'>Our <span className='text-[#E45D25]'>Awards </span>and Recognitions</h2>
+            <Slider />
         </div>
             
         
 
       {/* Text Content for larger screens */}
-      <div className="hidden lg:flex absolute top-[12rem] flex-col items-center justify-center w-full px-6 sm:px-8 lg:px-20">
+      <div className="hidden lg:flex absolute top-[8rem] flex-col items-center justify-center w-full">
         {/* Paragraph 1 - Hidden on <1024px */}
 
         {/* Heading - Hidden on <1024px */}
@@ -90,7 +87,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <p className="hidden lg:block text-white font-normal xl:mb-6 2xl:mb-32 text-[18px] lg:text-[20px] xl:text-[24px] 2xl:text-[26px] w-[75%] xl:w-[65%] text-center">
           {paragraphText2}
         </p>
-
+          <div className='xl:hidden mt-10'></div>
         <Awards/>
       </div>
     </section>

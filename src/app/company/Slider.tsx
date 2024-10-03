@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image'; 
 
-const Awards: React.FC = () => {
+const Slider: React.FC = () => {
   const awards = [
     '/1.png',
     '/2.png',
@@ -15,11 +15,6 @@ const Awards: React.FC = () => {
   return (
     <section className="w-full m-auto">
       <div className="w-full mx-auto">
-        {/* Section Title */}
-        <h2 className="text-center text-white font-bold sm:text-2xl md:text-2xl lg:text-3xl mb-2">
-          Our Awards and Recognitions
-        </h2>
-
         {/* Awards/Icons Row with Infinite Scrolling */}
         <div className="slider-wrapper mt-10 w-[98%] m-auto overflow-hidden">
           <div className="slider flex items-center gap-14">
@@ -29,7 +24,7 @@ const Awards: React.FC = () => {
                 key={index}
                 className="h-[8.125rem] min-w-[100px] min-h-[100px] flex-shrink-0"
               >
-                <Image src={src} alt={`Award ${index + 1}`} width={130} height={130} />
+                <Image src={src} alt={`Award ${index + 1}`} width={100} height={100} />
               </div>
             ))}
           </div>
@@ -65,4 +60,4 @@ const Awards: React.FC = () => {
   );
 };
 
-export default Awards;
+export default Slider;
