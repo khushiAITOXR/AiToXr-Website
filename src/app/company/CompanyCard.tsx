@@ -67,15 +67,47 @@ export const WeAreRemote: React.FC = () => {
           </p>
   
           {/* Image Section */}
-          <div className="relative left-[30%] bottom-20 space-y-4">
+          <div className="flex justify-end">
             <Image
               src={imageSrc1}
               alt="Remote Team Image"
               width={700}
               height={400}
-              className=" object-cover"
+              className=" object-cover relative bottom-20"
             />
           </div>
+        </div>
+      </section>
+    );
+  };
+
+  export const Deliver: React.FC = () => {
+    // Image path and text variables
+    // const title = "We are fully remote";
+    const description = `Our team works in a remote environment. Our mission is to deliver creative and innovative solutions that help businesses succeed in the fast-paced digital world.`;
+    const imageSrc1 = '/company-3.png';
+  
+    return (
+      <section className="py-20 w-[82%] m-auto">
+        <div className="mx-auto">
+
+          <h1 className="text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-4 text-right ml-auto">
+          Delivering Projects On-time&nbsp; <br></br>
+          <span className="text-[#E45D25]">Everytime</span>
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-[18px] font-normal text-right ml-auto w-[55%]">
+            {description}
+          </p>
+
+
+            {/* Image Section */}
+            <Image
+              src={imageSrc1}
+              alt="Remote Team Image"
+              width={700}
+              height={400}
+              className=" object-cover relative bottom-32"
+            />
         </div>
       </section>
     );
