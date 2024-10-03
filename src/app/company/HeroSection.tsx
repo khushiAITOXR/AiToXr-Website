@@ -27,9 +27,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   onButtonClick,
 }) => {
   const router = useRouter();
-  const handleClick = (route: string) => {
-    router.push(route); // Navigate programmatically to the route
-  };
+  // const handleClick = (route: string) => {
+  //   router.push(route); // Navigate programmatically to the route
+  // };
 
   return (
     <section

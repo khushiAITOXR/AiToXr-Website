@@ -18,44 +18,6 @@ const Products: React.FC = () => {
     onButtonClick: () => alert('Button clicked!'),
   };
 
-  const productCardProps1 = {
-    imageSrc: '/ai-to-insights.svg',
-    title: 'AltoInsights',
-    description: 'Staff augmentation is the process of adding talent to your existing team through a third party.',
-    bulletPoints: [
-      'AI Stock Analysis',
-      'AI Chatbot',
-      'Report for Investment',
-      'Stock Dashboard',
-      'Complete Insights',
-      'AI Suggestion',
-    ],
-    buttonLabel: 'View Product',
-    onButtonClick: () => {
-      console.log('Button clicked');
-    },
-    imageOnRight: false, // or true, depending on where you want the image to be
-  };
-
-  const productCardProps2 = {
-    imageSrc: '/insighthread.svg',
-    title: 'InsighThread',
-    description: 'Staff augmentation is the process of adding talent to your existing team through a third party.',
-    bulletPoints: [
-      'AI Stock Analysis',
-      'AI Chatbot',
-      'Report for Investment',
-      'Stock Dashboard',
-      'Complete Insights',
-      'AI Suggestion',
-    ],
-    buttonLabel: 'View Product',
-    onButtonClick: () => {
-      console.log('Button clicked');
-    },
-    imageOnRight: true,
-    backgroundColor: '#F3F3F3',
-  };
   
 
   
