@@ -1,6 +1,7 @@
 'use client'; 
 
 import Contact from '../sections/Contact';
+import {AboutCompany, WeAreRemote} from './CompanyCard';
 import HeroSection from './HeroSection';
 
 const Products: React.FC = () => {
@@ -24,6 +25,8 @@ const Products: React.FC = () => {
   return (
     <>
       <HeroSection {...heroSectionProps} />
+      <AboutCompany />
+      <WeAreRemote />
 
       <Contact />
 
