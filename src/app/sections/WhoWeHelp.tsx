@@ -80,7 +80,7 @@ const WhoWeHelp: React.FC = () => {
       </h2>
 
       {/* Cards layout for screens >= 768px */}
-      <div className="hidden md:flex w-[86%] flex-wrap justify-center gap-[2%] m-auto">
+      <div className="hidden md:flex w-[90%] flex-wrap justify-center gap-[2%] m-auto ">
         {cards.map((card, index) => (
           <div key={index} className="flex justify-center w-[48%] lg:w-[32%] mb-6"> {/* Added mb-6 for vertical gap */}
             <Card

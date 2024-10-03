@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Button from '../components /Button';
+import Awards from './Awards';
 
 type HeroSectionProps = {
   backgroundImage?: string;
@@ -32,7 +33,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className="relative w-full -mt-[75px] overflow-hidden "
+      className="relative w-full lg:h-screen -mt-[75px] overflow-hidden "
     >
       {/* Background Image with Overlay */}
       <div className="relative w-full h-[280px] lg:h-full overflow-hidden">
@@ -46,12 +47,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             sizes="100vw"
           />
           {/* <div className="absolute inset-0 lg:gradient-l-r gradient-t-b clip-ellipse"></div> */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent backdrop-blur-[10px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent backdrop-blur-[3px]"></div>
           
         </div>
       </div>
 
-      <h1 className="lg:hidden z-50 relative bottom-[150px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white capitalize lg:w-[100%]">
+      <h1 className="lg:hidden relative bottom-[150px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white capitalize lg:w-[100%]">
           <div className='flex justify-center items-center gap-4'>
           <div>{heroSectionTextLine1} {heroSectionTextLine3}</div>
           {/* <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#E45D25] to-[#F7931E]">
@@ -72,11 +73,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         
 
       {/* Text Content for larger screens */}
-      <div className="hidden lg:flex absolute top-0 flex-col items-center justify-center w-full px-6 sm:px-8 lg:px-20 lg:h-[100vh]">
+      <div className="hidden lg:flex absolute top-[12rem] flex-col items-center justify-center w-full px-6 sm:px-8 lg:px-20">
         {/* Paragraph 1 - Hidden on <1024px */}
 
         {/* Heading - Hidden on <1024px */}
-        <h1 className="hidden lg:block text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold text-white capitalize lg:w-[100%] mb-6">
+        <h1 className="hidden lg:block text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white capitalize lg:w-[100%] mb-6">
           <div className='flex justify-center items-center gap-4'>
           <div>{heroSectionTextLine1}</div>
           <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#E45D25] to-[#F7931E]">
@@ -86,17 +87,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </h1>
 
         {/* Paragraph 2 - Hidden on <1024px */}
-        <p className="hidden lg:block text-white font-normal text-[18px] lg:text-[20px] xl:text-[26px] mb-6 w-[75%] xl:w-[65%] text-center">
+        <p className="hidden lg:block text-white font-normal xl:mb-6 2xl:mb-32 text-[18px] lg:text-[20px] xl:text-[24px] 2xl:text-[26px] w-[75%] xl:w-[65%] text-center">
           {paragraphText2}
         </p>
 
-        {/* Button - Hidden on <1024px */}
-        <div className='bg-[#00000099] hidden lg:flex  justify-between items-center border-2 border-[#E45D25] rounded-[20px] p-6  xl:p-12 w-[82%] lg:w-[90%]'>
-            <div className='text-white text-base md:text-lg lg:text-lg xl:text-xl  w-[75%] '>{text}</div>
-            <div className="hidden lg:block">
-            <Button variant="default" label={buttonLabel} onClick={onButtonClick} />
-            </div>
-        </div>
+        <Awards/>
       </div>
     </section>
   );

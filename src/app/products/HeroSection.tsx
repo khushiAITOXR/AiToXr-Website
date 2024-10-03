@@ -32,7 +32,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className="relative w-full -mt-[75px] overflow-hidden "
+      className="relative w-full lg:h-screen -mt-[75px] overflow-hidden "
     >
       {/* Background Image with Overlay */}
       <div className="relative w-full h-[280px] lg:h-full overflow-hidden">
@@ -46,12 +46,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             sizes="100vw"
           />
           {/* <div className="absolute inset-0 lg:gradient-l-r gradient-t-b clip-ellipse"></div> */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent backdrop-blur-[10px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent backdrop-blur-[3px]"></div>
           
         </div>
       </div>
 
-      <h1 className="lg:hidden z-50 relative bottom-[150px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white capitalize lg:w-[100%]">
+      <h1 className="lg:hidden relative bottom-[150px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white capitalize lg:w-[100%]">
           <div className='flex justify-center items-center gap-4'>
           <div>{heroSectionTextLine1} {heroSectionTextLine3}</div>
           {/* <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#E45D25] to-[#F7931E]">

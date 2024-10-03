@@ -72,8 +72,27 @@ const BlogPost: React.FC = () => {
           Insights
         </h2>
 
+
+        {/* Blog Post Cards */}
+        <div className="mt-10 hidden xl:flex justify-center space-x-[2%] m-auto">
+           <BlogPostCard
+             bgImage="/nvidia.jpg" // Path to your background image
+             topic="Do you offer custom software development?"
+           />
+           <BlogPostCard
+             bgImage="/socialMedia.jpg" // Path to your background image
+             topic="How social media can improve your business?"
+           />
+           <BlogPostCard
+             bgImage="/intel.jpg" // Path to your background image
+             topic="How AI is transforming the tech industry?"
+           />
+         </div> 
+
+
+
         {/* Blog Post Cards - Show one card at a time */}
-        <div className="flex justify-center">
+        <div className="flex xl:hidden justify-center">
           <div
             className="flex-shrink-0"
             key={currentIndex}

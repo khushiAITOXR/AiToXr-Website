@@ -8,9 +8,9 @@ const Products: React.FC = () => {
 
 
   const heroSectionProps = {
-    backgroundImage: '/products-hero-image.jpg', // Provide the path to the background image
+    backgroundImage: '/company.jpg', // Provide the path to the background image
     heroSectionTextLine1: 'OUR',
-    heroSectionTextLine3: 'PRODUCTS',
+    heroSectionTextLine3: 'COMPANY',
     paragraphText2: 'We create the best product which this growing industry needs. Look our product and find the best for your business',
     text: 'We customize products for your company. Let’s connect to know what you need and create a better product for your company.',
     buttonLabel: 'Schedule a Call',
