@@ -11,6 +11,10 @@ export const AboutCompany: React.FC = () => {
   return (
     <section className="py-20 flex flex-col items-center justify-center">
       <div className="flex flex-col xl:flex-row items-center justify-between w-[70%] mx-auto gap-16 m-auto">
+
+      <h1 className="xl:hidden text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px] font-bold mb-6 text-center xl:text-left">
+            About <span className="text-[#E45D25]">Company</span>
+          </h1>
         {/* Image Section */}
         <div className="w-full xl:w-[40%] flex justify-center">
           <Image
@@ -24,7 +28,7 @@ export const AboutCompany: React.FC = () => {
 
         {/* Text Section */}
         <div className="w-full xl:w-[60%] flex flex-col justify-center items-center">
-          <h1 className="text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px] font-bold mb-6 text-center xl:text-left">
+          <h1 className="hidden xl:block text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px] font-bold mb-6 text-center xl:text-left">
             About <span className="text-[#E45D25]">Company</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-[18px] font-normal text-justify">
@@ -48,7 +52,7 @@ export const WeAreRemote: React.FC = () => {
       <section className="py-20 flex flex-col items-center justify-center">
         <div className="w-[70%] mx-auto">
           {/* Title Section */}
-          <h1 className="text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-4 text-left">
+          <h1 className="text-center text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-4 xl:text-left">
             We are fully&nbsp;<span className="text-[#E45D25]">remote</span>
             <span className=" relative bottom-4">
               <Image
@@ -60,14 +64,24 @@ export const WeAreRemote: React.FC = () => {
               />
             </span>
           </h1>
+
+          <div className=" xl:hidden m-auto mt-16 mb-16">
+            <Image
+              src={imageSrc1}
+              alt="Remote Team Image"
+              width={700}
+              height={400}
+              className=" object-cover"
+            />
+          </div>
   
           {/* Description */}
-          <p className="w-[59%] text-sm sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-[18px] font-normal text-left">
+          <p className="xl:w-[59%] text-sm sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-[18px] font-normal text-center xl:text-left">
             {description}
           </p>
   
           {/* Image Section */}
-          <div className="flex justify-end">
+          <div className="hidden xl:flex justify-end">
             <Image
               src={imageSrc1}
               alt="Remote Team Image"
@@ -91,11 +105,11 @@ export const WeAreRemote: React.FC = () => {
       <section className="py-20 w-[82%] m-auto">
         <div className="mx-auto">
 
-          <h1 className="text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-4 text-right ml-auto">
+          <h1 className="text-center text-[28px] sm:text-[28px] md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[48px]  font-bold mb-4 xl:text-right ml-auto">
           Delivering Projects On-time&nbsp; <br></br>
           <span className="text-[#E45D25]">Everytime</span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-[18px] font-normal text-right ml-auto w-[55%]">
+          <p className="hidden xl:block text-sm sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-[18px] font-normal text-right ml-auto w-[55%]">
             {description}
           </p>
 
@@ -106,8 +120,18 @@ export const WeAreRemote: React.FC = () => {
               alt="Remote Team Image"
               width={700}
               height={400}
-              className=" object-cover relative bottom-32"
+              className="hidden xl:block object-cover relative bottom-32"
             />
+             <Image
+              src={imageSrc1}
+              alt="Remote Team Image"
+              width={700}
+              height={400}
+              className="xl:hidden object-cover m-auto mt-16 "
+            />
+            <p className="xl:hidden text-sm sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-[18px] font-normal text-center mt-16">
+            {description}
+          </p>
         </div>
       </section>
     );
