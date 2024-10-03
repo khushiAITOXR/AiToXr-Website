@@ -3,7 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 // import { useRouter } from 'next/navigation';
-import Button from '../components /Button';
 import Awards from './Awards';
 import Slider from './Slider';
 
@@ -22,10 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   heroSectionTextLine1,
   heroSectionTextLine3,
-  text,
   paragraphText2,
-  buttonLabel,
-  onButtonClick,
 }) => {
   // const router = useRouter();
   // const handleClick = (route: string) => {
