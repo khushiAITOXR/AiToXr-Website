@@ -1,16 +1,14 @@
 'use client'; 
 
 import Contact from '../sections/Contact';
-import Banner from './Banner';
 import HeroSection from './HeroSection';
-import ProductCard from './ProductCard';
 
 const Products: React.FC = () => {
 
 
 
   const heroSectionProps = {
-    backgroundImage: '/products-hero-image.jpg',
+    backgroundImage: '/products-hero-image.jpg', // Provide the path to the background image
     heroSectionTextLine1: 'OUR',
     heroSectionTextLine3: 'PRODUCTS',
     paragraphText2: 'We create the best product which this growing industry needs. Look our product and find the best for your business',
@@ -64,11 +62,6 @@ const Products: React.FC = () => {
   return (
     <>
       <HeroSection {...heroSectionProps} />
-
-      <ProductCard {...productCardProps1} />
-      <ProductCard {...productCardProps2} />
-      <ProductCard {...productCardProps1} />
-      <Banner />
 
       <Contact />
 

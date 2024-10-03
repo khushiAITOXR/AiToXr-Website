@@ -64,8 +64,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           {paragraphText2}
         </p>
 
-        <div className='bg-[#F3F3F3] lg:hidden flex flex-col gap-8 justify-center items-center p-10  xl:p-12 w-full  h-[288px] sm:h-[220px] md:[200px]'>
-            <div className='text-black text-[14px] text-center sm:text-base md:text-base lg:text-lg xl:text-xl  w-[75%] '>{text}</div>
+        <div className='bg-[#F3F3F3] lg:hidden flex flex-col  justify-between items-center p-10  xl:p-12 w-full h-[288px]'>
+            <div className='text-black text-[14px] text-center sm:text-base md:text-base lg:text-lg xl:text-xl  w-[75%] mb-6 '>{text}</div>
             <Button variant="fill" label={buttonLabel} onClick={onButtonClick} />
         </div>
             
