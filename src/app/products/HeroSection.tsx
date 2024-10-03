@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import Button from '../components /Button';
 
 type HeroSectionProps = {
@@ -25,7 +25,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   buttonLabel,
   onButtonClick,
 }) => {
-  const router = useRouter();
+  // const router = useRouter();
   // const handleClick = (route: string) => {
   //   router.push(route); // Navigate programmatically to the route
   // };
