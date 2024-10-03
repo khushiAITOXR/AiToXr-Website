@@ -10,7 +10,7 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <section className='bg-gradient-to-r from-orange-400 to-orange-600 '>
+    <section className='bg-gradient-to-r from-gr-start to-gr-end '>
         <div className="w-[82%] flex flex-col lg:flex-row items-center justify-between  py-16 m-auto">
         {/* Image */}
         <div className="w-full mb-8 lg:mb-0 lg:hidden lg:w-[50%] flex justify-center">
