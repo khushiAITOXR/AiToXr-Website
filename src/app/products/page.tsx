@@ -21,7 +21,7 @@ const Products: React.FC = () => {
   };
 
   const productCardProps1 = {
-    imageSrc: '/ai-to-insights.svg',
+    imageSrc: '/insighthread.svg',
     title: 'AltoInsights',
     description: 'Staff augmentation is the process of adding talent to your existing team through a third party.',
     bulletPoints: [
