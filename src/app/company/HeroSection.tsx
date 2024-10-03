@@ -73,7 +73,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         
 
       {/* Text Content for larger screens */}
-      <div className="hidden lg:flex absolute top-[12rem] flex-col items-center justify-center w-full px-6 sm:px-8 lg:px-20">
+      <div className="hidden lg:flex absolute top-[8rem] flex-col items-center justify-center w-full px-6 sm:px-8 lg:px-20">
         {/* Paragraph 1 - Hidden on <1024px */}
 
         {/* Heading - Hidden on <1024px */}
