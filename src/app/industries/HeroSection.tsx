@@ -101,6 +101,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </p>
 
         <Dropdown items={items} onSelect={handleSelect} onOpenDropdown={handleCloseBanner} />
+        {selectedIndustry && (
+        <div className="lg:hidden text-center mt-8 lg:mt-16">
+          <p className="text-[16px] lg:text-[18px] font-medium text-white">
+            Scroll down to see our expertise in this industry.
+          </p>
+        </div>
+      )}
         </div>
 
       {/* Text Content for larger screens */}
@@ -116,6 +123,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </h1>
         <p className='text-white 2xl:text-3xl xl:text-3xl lg:text-2xl font-bold mt-3 xl:mt-8 mb-6 2xl:mb-10 xl:mb-8'>Choose Your Industry</p>
         <Dropdown items={items} onSelect={handleSelect} onOpenDropdown={handleCloseBanner} />
+        {selectedIndustry && (
+        <div className="hidden lg:block text-center mt-8 lg:mt-16">
+          <p className="text-[16px] lg:text-[18px] font-medium text-white">
+            Scroll down to see our expertise in this industry.
+          </p>
+        </div>
+      )}
        
       </div>
       {isBannerVisible && <Banner onClose={handleCloseBanner} />}
