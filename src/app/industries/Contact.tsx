@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef } from 'react';
+import React from 'react';
 import Button from '../components /Button';
 import ContactCard from '../components /ContactCard';
 
@@ -19,9 +19,9 @@ const mainAddress3 = 'B-24, Sector - 123, Near School, ';
 const additionalAddress3 ='Noida, Delhi - 103342';
 const phoneNumber3 = '+91 9876-082332';
 
-const Contact = forwardRef<HTMLElement>((_, ref) => {
+const Contact : React.FC = () => {
   return (
-    <section ref={ref} className="w-full py-8 lg:py-16 flex justify-center items-start bg-white m-auto">
+    <section className="w-full py-8 lg:py-16 flex justify-center items-start bg-white m-auto">
       <div className=" w-[82%]">
         {/* Section Title */}
         <h2 className="text-center text-[#1E1E1E] font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-10 md:mb-12 lg:mb-16">
@@ -123,8 +123,7 @@ const Contact = forwardRef<HTMLElement>((_, ref) => {
       </div>
     </section>
   );
-});
+};
 
-Contact.displayName = 'Contact';
 
 export default Contact;
