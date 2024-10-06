@@ -27,7 +27,7 @@ const Banner: React.FC<{ onClose: () => void }> = ({onClose}) => {
 
   return (
     <section
-      className={`fixed left-0 right-0 bottom-0 bg-gradient-to-r from-gr-start to-gr-end transition-transform duration-700 ease-in-out ${
+      className={`hidden lg:fixed left-0 right-0 bottom-0 bg-gradient-to-r from-gr-start to-gr-end transition-transform duration-700 ease-in-out ${
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
       style={{ zIndex: 1000 }}

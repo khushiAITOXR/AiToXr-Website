@@ -15,38 +15,49 @@ type HeroSectionProps = {
   buttonLabel: string;
   logoTitle?: string;
   onButtonClick?: () => void;
+  onIndustrySelect: (industry: string) => void;
 };
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   heroSectionTextLine1,
   heroSectionTextLine3,
+  onIndustrySelect
 }) => {
   // const router = useRouter();
   // const handleClick = (route: string) => {
   //   router.push(route); // Navigate programmatically to the route
   // };
   const [isBannerVisible, setIsBannerVisible] = useState(true);
+  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+
+  const backgroundImages: { [key: string]: string } = {
+    Healthcare: '/healthcare-hero.jpg',
+    Education: '/education-hero.jpg',
+    'Sports and Fitness': '/sports-hero.jpg',
+    'Finance and Banking': '/finance-hero.jpg',
+    // Add more background images for different industries
+    default: backgroundImage || '/heroImage.jpg',
+  };
 
   const items = [
     'Healthcare',
     'Education',
     'Sports and Fitness',
-    'Restaurants',
+    'Finance and Banking',
+    'Real Estate',
+    'E-commerce and Retail',
+    'Travel and Tourism',
+    'Transport and Logistics',
+    'Food and Restaurants',
+    'Enterprise Mobility',
+    'Media and Entertainment',
     'Didn’t find your industry',
   ];
 
   const handleSelect = (item: string) => {
-    // Render different components based on the selected item
-    if (item === 'Healthcare') {
-      console.log('Selected: Healthcare');
-      // Render a specific component or take any action
-    } else if (item === 'Education') {
-      console.log('Selected: Education');
-      // Render another component
-    } else {
-      console.log(`Selected: ${item}`);
-    }
+    setSelectedIndustry(item);
+    onIndustrySelect(item); // Pass selected industry to parent component
   };
 
   const handleCloseBanner = () => {
@@ -61,7 +72,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative w-full h-[280px] lg:h-full overflow-hidden">
         <div className="absolute inset-0 lg:top-0 top-[6%] w-full lg:clip-none clip-ellipse">
           <Image
-            src={backgroundImage || '/heroImage.jpg'}
+            src={backgroundImages[selectedIndustry || 'default']}
             alt="Hero Background"
             fill
             className="object-cover object-center w-full"
@@ -79,12 +90,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <div>{heroSectionTextLine1} {heroSectionTextLine3}</div>
           </div>
         </h1>
-
-        <p className="lg:hidden text-black  font-bold text-[24px] md:text-[28px] mb-10 w-[75%] xl:w-[65%] text-center m-auto">
+        <div className='lg:hidden relative bottom-[70px]'>
+        <p className=" text-black  font-bold text-[24px] md:text-[28px] mb-4 w-[75%] xl:w-[65%] text-center m-auto">
         Choose Your <span className='text-[#E45D25]'>Industry</span>
         </p>
-            
-        
+
+        <Dropdown items={items} onSelect={handleSelect} onOpenDropdown={handleCloseBanner} />
+        </div>
 
       {/* Text Content for larger screens */}
       <div className="hidden lg:flex absolute top-[8rem] flex-col items-center justify-center w-full">
