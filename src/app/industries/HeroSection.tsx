@@ -71,7 +71,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className="relative w-full lg:h-screen -mt-[75px] overflow-hidden "
+      className="relative w-full lg:h-screen -mt-[75px] "
     >
       {/* Background Image with Overlay */}
       <div className="relative w-full h-[280px] lg:h-full overflow-hidden">
@@ -104,17 +104,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
       {/* Text Content for larger screens */}
-      <div className="hidden lg:flex absolute top-[8rem] flex-col items-center justify-center w-full">
+      <div className="hidden lg:flex absolute top-[6rem] flex-col items-center justify-center w-full">
         {/* Paragraph 1 - Hidden on <1024px */}
 
         {/* Heading - Hidden on <1024px */}
-        <h1 className="hidden lg:block text-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white capitalize lg:w-[100%]">
+        <h1 className="hidden lg:block text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold text-white capitalize lg:w-[100%]">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#E45D25] to-[#F7931E]">
             {heroSectionTextLine1}
           </span>
           <span>{heroSectionTextLine3}</span>
         </h1>
-        <p className='text-white 2xl:text-3xl xl:text-3xl lg:text-2xl font-bold mt-5 xl:mt-8 2xl:mt-10 mb-6 2xl:mb-10 xl:mb-8'>Choose Your Industry</p>
+        <p className='text-white 2xl:text-3xl xl:text-3xl lg:text-2xl font-bold mt-3 xl:mt-8 mb-6 2xl:mb-10 xl:mb-8'>Choose Your Industry</p>
         <Dropdown items={items} onSelect={handleSelect} onOpenDropdown={handleCloseBanner} />
        
       </div>

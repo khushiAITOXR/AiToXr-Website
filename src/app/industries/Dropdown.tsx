@@ -108,7 +108,7 @@ const Dropdown: React.FC<DropdownProps> = ({ items, onSelect, onOpenDropdown }) 
   };
 
   return (
-    <div className="relative w-[75%] sm:w-[60%] mid:w-[40%] m-auto">
+    <div className="relative w-[70%] sm:w-[70%] mid:w-[40%] lg:w-[40%] m-auto">
       {/* Select Input */}
       <div
         className="bg-transparent lg:bg-[#0000007D] border-2 border-[#E45D25] text-black lg:text-white py-2 px-4 rounded-[10px] flex items-center justify-between cursor-pointer"
@@ -121,7 +121,7 @@ const Dropdown: React.FC<DropdownProps> = ({ items, onSelect, onOpenDropdown }) 
       {/* Dropdown List */}
       {isOpen && (
         <div
-          className=" z-[9999] absolute w-full lg:max-h-[280px] xl:max-h-[220px] 2xl:max-h-[340px] bg-[#00000080] backdrop-blur-[20px] rounded-[10px] mt-2 overflow-y-auto"
+          className="absolute w-full lg:max-h-[280px] xl:max-h-[220px] 2xl:max-h-[340px] bg-[#00000080] backdrop-blur-[20px] rounded-[10px] mt-2 overflow-y-auto"
           style={{ padding: '10px' }}
         >
           <ul className="space-y-1">
