@@ -1,5 +1,6 @@
 import Banner from '../products/Banner';
 import Contact from '../sections/Contact';
+import Benefit from './Benefits';
 import Provide from './Provide';
 import Title from './Title';
 import Why from './Why';
@@ -57,6 +58,11 @@ const Healthcare = () => {
       highlight="Provide"
       items={items}
     />
+     <Benefit
+        title="Who Get Benefits ?"
+        highlight="Benefits"
+        // No items provided to showcase the placeholder cards
+      />
     <Banner/>
     <Contact/>
     </section>
