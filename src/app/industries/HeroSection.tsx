@@ -36,7 +36,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     Education: '/education-hero.jpg',
     'Sports and Fitness': '/sports-hero.jpg',
     'Finance and Banking': '/finance-hero.jpg',
-    // Add more background images for different industries
+    'Real Estate': '/estate-hero.jpg',
+    'E-commerce and Retail': '/retail-hero.jpg',
+    'Travel and Tourism': '/travel-hero.jpg',
+    'Transport and Logistics': '/transport-hero.jpg',
+    'Food and Restaurants': '/food-hero.jpg',
+    'Enterprise Mobility': '/enterprise-hero.jpg',
+    'Media and Entertainment': '/media-hero.jpg',
     default: backgroundImage || '/heroImage.jpg',
   };
 
@@ -52,7 +58,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     'Food and Restaurants',
     'Enterprise Mobility',
     'Media and Entertainment',
-    'Didn’t find your industry',
   ];
 
   const handleSelect = (item: string) => {
