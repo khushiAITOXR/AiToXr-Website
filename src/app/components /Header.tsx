@@ -176,8 +176,7 @@ import { FaChevronDown } from 'react-icons/fa6';
             Products
           </a>
           <a
-            href="#industries"
-            onClick={() => setActiveLink('industries')}
+            onClick={() => handleClick('/industries','industries')}
             className={`cursor-pointer ${
               activeLink === 'industries' ? 'text-[#E45D25]' : 'hover:text-[#E45D25]'
             }`}
