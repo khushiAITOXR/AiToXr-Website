@@ -19,7 +19,7 @@ const mainAddress3 = 'B-24, Sector - 123, Near School, ';
 const additionalAddress3 ='Noida, Delhi - 103342';
 const phoneNumber3 = '+91 9876-082332';
 
-const Contact = forwardRef<HTMLElement | null, {}>((_, ref) => {
+const Contact = forwardRef<HTMLElement | null, React.PropsWithChildren<{}>>((_, ref) => {
   return (
     <section ref={ref ?? undefined} className="w-full py-8 lg:py-16 flex justify-center items-start bg-white m-auto">
       <div className=" w-[82%]">
