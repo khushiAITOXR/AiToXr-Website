@@ -15,8 +15,8 @@ const additionalAddress2 ='ON L5B 3C4, Canada';
 const phoneNumber2 = '+91 9876-082332';
 
 const Office3 = 'USA'
-const mainAddress3 = 'B-24, Sector - 123, Near School, ';
-const additionalAddress3 ='Noida, Delhi - 103342';
+const mainAddress3 = '26 Matthews Gate,  Mississauga,';
+const additionalAddress3 ='ON L5B 3C4, USA';
 const phoneNumber3 = '+91 9876-082332';
 
 const Contact = forwardRef<HTMLElement>((_, ref) => {

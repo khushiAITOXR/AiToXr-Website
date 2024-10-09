@@ -138,7 +138,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
           <div className='flex flex-col items-center gap-5'>
             <SubItemList
-            onClick={() => handleClick('/app-devevelopment')}
+            onClick={() => handleClick('/app-development')}
             heading="App Development"
             description="Our software developers in your team."
             />
