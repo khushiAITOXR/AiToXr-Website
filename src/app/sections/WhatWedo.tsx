@@ -184,8 +184,8 @@ const ServiceCard = () => {
       {/* Original layout for larger screens (unchanged) */}
       <div className="hidden lg:flex justify-center">
         {/* Left - List of Services */}
-        <div className=" bg-[#f5f5f5] rounded-l-lg w-[45%] pr-2"
-          style={{ position: 'relative', left: '17px', zIndex: '0', borderRadius: '1.25rem 0rem 0rem 1.25rem', width: "50%" }}
+        <div className=" bg-[#f5f5f5] rounded-l-lg w-[45%] pr-0 overflow-y-auto overflow-x-hidden"
+          style={{ position: 'relative', left: '32px', zIndex: '0', borderRadius: '1.25rem 0rem 0rem 1.25rem', width: "50%", maxHeight: '500px' }}
         >
           {serviceItems.map((service) => (
             <div
