@@ -207,7 +207,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </h1>
 
         {/* Paragraph 2 - Hidden on <1024px */}
-        <p className="hidden lg:block text-white font-normal text-[18px] sm:text-[20px] lg:text-[24px] mb-6 lg:w-[46rem]">
+        <p className="hidden lg:block text-white font-normal text-[18px] sm:text-[20px] lg:text-[24px] mb-6 lg:w-[86%] xl:w-[70%]">
           {paragraphText2}
         </p>
 
