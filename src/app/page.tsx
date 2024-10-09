@@ -78,7 +78,10 @@ const handleClick = (route: string) => {
           sizes="100vw"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 lg:gradient-l-r gradient-t-b clip-ellipse"
+        <div className="absolute inset-0 clip-ellipse"
+        style={{
+          background: 'linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.7) 51.3%, rgba(0, 0, 0, 0) 100%)',
+      }}
         ></div>
     </div>
 </div>

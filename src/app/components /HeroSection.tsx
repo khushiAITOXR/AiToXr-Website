@@ -101,7 +101,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Button from './Button'; // Assuming Button component exists
 import { useRouter } from 'next/navigation';
@@ -135,9 +135,34 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     router.push(route); // Navigate programmatically to the route
   };
 
+
+  const [gradientStyle, setGradientStyle] = useState({});
+
+    useEffect(() => {
+        const updateGradient = () => {
+            if (window.innerWidth >= 1024) {
+                setGradientStyle({
+                    background: 'linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.7) 51.3%, rgba(0, 0, 0, 0) 100%)',
+                });
+            } else {
+                setGradientStyle({
+                    background: 'transparent',
+                });
+            }
+        };
+
+        updateGradient(); // Set gradient on initial render
+        window.addEventListener('resize', updateGradient); // Update gradient on resize
+
+        return () => {
+            window.removeEventListener('resize', updateGradient); // Cleanup event listener on component unmount
+        };
+    }, []);
+  
+
   return (
     <section
-      className="relative w-full h-screen -mt-[75px] overflow-hidden lg:border-b-[10px] "
+      className="relative w-full lg:h-screen -mt-[75px] overflow-hidden lg:border-b-[10px]  "
     >
       {/* Background Image with Overlay */}
       <div className="relative w-full h-[48vh] lg:h-full overflow-hidden">
@@ -150,7 +175,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 lg:gradient-l-r gradient-t-b clip-ellipse"></div>
+          <div className="absolute inset-0 clip-ellipse"
+          style={gradientStyle}
+          ></div>
         </div>
       </div>
 
@@ -171,7 +198,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </p>
 
         {/* Heading - Hidden on <1024px */}
-        <h1 className="hidden lg:block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white capitalize lg:w-[58rem] mb-6">
+        <h1 className="hidden lg:block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white capitalize lg:w-[59rem] mb-6">
           <div>{heroSectionTextLine1}</div>
           <div>{heroSectionTextLine2}</div>
           <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#E45D25] to-[#F7931E]">
@@ -191,7 +218,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Text Content for smaller screens */}
-      <div className="flex flex-col items-start justify-start w-full px-6 sm:px-8 lg:mt-0 lg:hidden mt-[8vh] relative bottom-[10%]">
+      <div className="flex flex-col items-start justify-start w-full px-6 sm:px-8 lg:mt-0 lg:hidden relative bottom-[10%]">
         {/* Paragraph 1 - Visible on <1024px */}
         <p className="flex items-center text-black font-normal text-[14px] sm:text-[16px] md:text-[18px] mb-4">
           {paragraphText1}
@@ -226,7 +253,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Bottom Section */}
-      <div className="lg:absolute relative py-2 lg:py-2  lg:bottom-0 left-0 w-full h-[15%] sm:h-[15%] md:h-[15%] bg-black bg-opacity-50 flex flex-col items-center justify-center lg:h-[22%] lg:flex lg:flex-col lg:justify-center lg:items-center">
+      <div className="lg:absolute mt-4 lg:mt-0 relative py-2 lg:py-2  lg:bottom-0 left-0 w-full h-[85px] sm:h-[85px] md:h-[95px] bg-black bg-opacity-50 flex flex-col items-center justify-center lg:h-[22%] lg:flex lg:flex-col lg:justify-center lg:items-center">
         <h3 className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl">
           {/* {logoTitle} */}
           Our Brand Work for
