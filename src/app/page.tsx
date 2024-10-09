@@ -20,7 +20,8 @@ const heroSectionTextLine1 = "Accelerate Your Roadmap";
 const heroSectionTextLine2 = "With Our Vetted";
 const heroSectionTextLine3 = "Nearshore Tech Talent.";
 const paragraphText1 = "Create. Collaborate. Develop.";
-const paragraphText2 = "Access 4,000+ timezone aligned software engineers with experience in 100+ technologies.";
+const paragraphText2 = `Unlocking Business Potential with Data-Driven Insights.
+ Empowering Businesses to Innovate and Scale with Comprehensive AI-Driven Solutions`;
 
 export default function HomePage() {
 
@@ -112,7 +113,7 @@ const handleClick = (route: string) => {
     </h1>
 
     {/* Paragraph 2 - Hidden on <1024px */}
-    <p className="hidden lg:block text-white font-normal text-[18px] sm:text-[20px] lg:text-[24px] mb-6 lg:w-[46rem]">
+    <p className="hidden lg:block text-white font-normal text-[18px] sm:text-[20px] lg:text-[24px] mb-6 lg:w-[56rem]">
       {paragraphText2}
     </p>
 
