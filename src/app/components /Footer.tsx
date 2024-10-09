@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                 <li><Link href="/" className="text-white text-base font-normal">Home</Link></li>
                 <li><Link href="/careers" className="text-white text-base font-normal">Careers</Link></li>
                 <li><Link href="/blogs" className="text-white text-base font-normal">Blogs</Link></li>
-                <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li>
+                {/* <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li> */}
                 <li><Link href="/case-studies" className="text-white text-base font-normal">Case Studies</Link></li>
                 <li><Link href="/terms" className="text-white text-base font-normal">Terms & Conditions</Link></li>
                 <li><Link href="/privacy-policy" className="text-white text-base font-normal">Privacy Policy</Link></li>
@@ -120,11 +120,11 @@ const Footer: React.FC = () => {
               <ul className="space-y-6">
                 <li><Link href="/saas-products" className="text-white text-base font-normal">SAAS Products</Link></li>
                 <li><Link href="/employee-management" className="text-white text-base font-normal">Employee Management</Link></li>
-                <li><Link href="/blogs" className="text-white text-base font-normal">Blogs</Link></li>
-                <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li>
-                <li><Link href="/case-studies" className="text-white text-base font-normal">Case Studies</Link></li>
-                <li><Link href="/terms" className="text-white text-base font-normal">Terms & Conditions</Link></li>
-                <li><Link href="/privacy-policy" className="text-white text-base font-normal">Privacy Policy</Link></li>
+                {/* <li><Link href="/blogs" className="text-white text-base font-normal">Blogs</Link></li> */}
+                {/* <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li> */}
+                {/* <li><Link href="/case-studies" className="text-white text-base font-normal">Case Studies</Link></li> */}
+                {/* <li><Link href="/terms" className="text-white text-base font-normal">Terms & Conditions</Link></li> */}
+                {/* <li><Link href="/privacy-policy" className="text-white text-base font-normal">Privacy Policy</Link></li> */}
               </ul>
             </div>
           </div>
@@ -218,7 +218,7 @@ const Footer: React.FC = () => {
                 <li><Link href="/" className="text-white text-base font-normal">Home</Link></li>
                 <li><Link href="/careers" className="text-white text-base font-normal">Careers</Link></li>
                 <li><Link href="/blogs" className="text-white text-base font-normal">Blogs</Link></li>
-                <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li>
+                {/* <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li> */}
                 <li><Link href="/case-studies" className="text-white text-base font-normal">Case Studies</Link></li>
                 <li><Link href="/terms" className="text-white text-base font-normal">Terms & Conditions</Link></li>
                 <li><Link href="/privacy-policy" className="text-white text-base font-normal">Privacy Policy</Link></li>
@@ -233,11 +233,11 @@ const Footer: React.FC = () => {
               <ul className="space-y-6">
                 <li><Link href="/saas-products" className="text-white text-base font-normal">SAAS Products</Link></li>
                 <li><Link href="/employee-management" className="text-white text-base font-normal">Employee Management</Link></li>
-                <li><Link href="/blogs" className="text-white text-base font-normal">Blogs</Link></li>
-                <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li>
-                <li><Link href="/case-studies" className="text-white text-base font-normal">Case Studies</Link></li>
-                <li><Link href="/terms" className="text-white text-base font-normal">Terms & Conditions</Link></li>
-                <li><Link href="/privacy-policy" className="text-white text-base font-normal">Privacy Policy</Link></li>
+                {/* <li><Link href="/blogs" className="text-white text-base font-normal">Blogs</Link></li> */}
+                {/* <li><Link href="/insights" className="text-white text-base font-normal">Insights</Link></li> */}
+                {/* <li><Link href="/case-studies" className="text-white text-base font-normal">Case Studies</Link></li> */}
+                {/* <li><Link href="/terms" className="text-white text-base font-normal">Terms & Conditions</Link></li> */}
+                {/* <li><Link href="/privacy-policy" className="text-white text-base font-normal">Privacy Policy</Link></li> */}
               </ul>
             </div>
           </div>
@@ -246,7 +246,7 @@ const Footer: React.FC = () => {
 
           {/* Column 2 - SERVICES */}
           <div className='w-[80%] m-auto lg:hidden'>
-              <h3 className="text-[#E45D25] font-bold mb-4">SERVICES</h3>
+              <h3 className="text-[#E45D25] font-bold mb-4 mt-8">SERVICES</h3>
               <ul className="space-y-6">
                 <li><Link href="/staff-augmentation" className="text-white text-base font-normal">Staff Augmentation</Link></li>
                 <li><Link href="/dedicated-teams" className="text-white text-base font-normal">Dedicated Teams</Link></li>
@@ -260,7 +260,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <p className="text-white text-center w-[65%] m-auto text-sm font-normal mt-12">
+            <p className="text-white text-center w-[65%] m-auto text-sm font-normal mt-12 lg:hidden">
             © 2023-24 AiToXr. All Rights Reserved. Do not sell my personal data.
           </p>
     </footer>
