@@ -5,7 +5,7 @@ import HeroSection from '../components /HeroSection';
 import AboutSection from '../components /AboutSection';
 import Industry from '../sections/Industry';
 import FaqSection from '../sections/FaqSection';
-import Testimonials from '../sections/Testimonials';
+// import Testimonials from '../sections/Testimonials';
 import Awards from '../sections/Awards';
 import Contact from '../sections/Contact';
 import BlogPost from '../sections/BlogPost';
@@ -228,7 +228,7 @@ As Generative AI and LLM technologies continue to evolve, they are composed to r
        <Industry/>
 
        {/* Client Testimonials */}
-       <Testimonials/>
+       {/* <Testimonials/> */}
 
        {/* FAQs */}
        <FaqSection faqItems={faqItems} />
