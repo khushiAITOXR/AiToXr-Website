@@ -65,6 +65,11 @@ const Industry = forwardRef<HTMLElement, object>((_, ref) => {
     },
   ];
 
+  const handleItemClick = (label: string) => {
+    const route = `/industries?industry=${encodeURIComponent(label)}`;
+    window.open(route, '_blank');
+  };
+
   return (
     <section ref={ref} className="py-8 lg:py-16 w-[100%]">
       {/* Section Title */}
@@ -74,7 +79,7 @@ const Industry = forwardRef<HTMLElement, object>((_, ref) => {
 
       {/* Grid Section */}
       <div className="mx-auto w-[82%]">
-        <Grid variant={'secondary'} items={items} defaultOpacity={1}/>
+        <Grid variant={'secondary'} items={items} onClick={handleItemClick} defaultOpacity={1}/>
       </div>
     </section>
   );

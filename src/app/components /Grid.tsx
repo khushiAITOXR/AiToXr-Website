@@ -77,9 +77,10 @@ type GridProps = {
   }[];
   defaultOpacity?: number; // New prop to set the default opacity of the images
   variant?: 'primary' | 'secondary'; // Variant prop to switch between primary and secondary layouts
+  onClick?: (label: string) => void;
 };
 
-const Grid: React.FC<GridProps> = ({ items, variant = 'primary' }) => {
+const Grid: React.FC<GridProps> = ({ items, variant = 'primary', onClick }) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null); // State to track which grid item is hovered
 
   // Define grid columns to maintain 4 columns on mobile screens
@@ -102,6 +103,7 @@ const Grid: React.FC<GridProps> = ({ items, variant = 'primary' }) => {
           }}
           onMouseEnter={() => setHoverIndex(index)} // Set the hover index
           onMouseLeave={() => setHoverIndex(null)} // Reset the hover index
+          onClick={() => variant === 'secondary' && onClick && item.label && onClick(item.label)} 
         >
           {/* Image Section */}
           <Image

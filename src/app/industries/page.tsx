@@ -13,8 +13,12 @@ import Retail from './Retail';
 import Sports from './Sports';
 import Transport from './Transport';
 import Travel from './Travel';
+// import { useSearchParams } from 'next/navigation';
+// import { useRouter } from 'next/router';
 
 const Industries: React.FC = () => {
+  // const router = useRouter();
+  // const { industry } = router.query;
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
 
 
@@ -57,6 +61,12 @@ const Industries: React.FC = () => {
         return null;
     }
   };
+
+  // useEffect(() => {
+  //   if (selectedIndustryParam) {
+  //     setSelectedIndustry(selectedIndustryParam);
+  //   }
+  // }, [selectedIndustryParam]);
 
 
   
