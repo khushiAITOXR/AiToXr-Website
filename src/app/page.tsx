@@ -20,7 +20,8 @@ const heroSectionTextLine1 = "Accelerate Your Roadmap";
 const heroSectionTextLine2 = "With Our Vetted";
 const heroSectionTextLine3 = "Nearshore Tech Talent.";
 const paragraphText1 = "Create. Collaborate. Develop.";
-const paragraphText2 = "Access 4,000+ timezone aligned software engineers with experience in 100+ technologies.";
+const paragraphText2 = `Unlocking Business Potential with Data-Driven Insights.
+ Empowering Businesses to Innovate and Scale with Comprehensive AI-Driven Solutions`;
 
 export default function HomePage() {
 
@@ -37,20 +38,20 @@ const handleClick = (route: string) => {
 
   const faqItems = [
     {
-      question: 'How do you ensure smooth performance for VR applications on different hardware platforms?',
-      answer: 'We optimize VR applications using performance profiling tools such as Unity Profiler and Unreal Insights. Our development process ensures compatibility across devices (Oculus, HTC Vive) by adjusting graphical settings and leveraging techniques like dynamic resolution scaling.',
+      question: 'Can AItoXR customize solutions to fit specific business needs?',
+      answer: 'Yes, we specialize in tailoring AI-driven and digital solutions to meet the unique requirements of each client, ensuring a perfect fit for their business goals.',
     },
     {
-      question: 'What role does machine learning play in enhancing AR experiences?',
-      answer: 'Machine learning models are used in AR to enhance object recognition, gesture tracking, and spatial mapping. We implement solutions using libraries like ARKit, ARCore, and TensorFlow to make AR interactions more intuitive and immersive.',
+      question: 'What services does AItoXR provide?',
+      answer: 'AItoXR offers a wide range of services including AI/ML development, AR/VR solutions, mobile and web app development, blockchain integration, digital marketing, and staff augmentation, among others.',
     },
     {
-      question: 'How do you handle real-time rendering in AR/VR environments?',
-      answer: 'Real-time rendering is achieved through optimization techniques such as level-of-detail (LOD) models, occlusion culling, and GPU instancing. Our team ensures that performance is maintained without compromising the visual quality of 3D assets.',
+      question: 'How does AItoXR handle project timelines and deadlines?',
+      answer: 'We prioritize transparency and effective project management, ensuring timely delivery of solutions while maintaining open communication and flexibility to adapt to any changes.',
     },
     {
-      question: 'Can AR/VR applications be integrated with AI-driven analytics for enhanced user insights?',
-      answer: 'Yes, we integrate AI analytics tools to track user interactions, motion data, and behavioral patterns in AR/VR environments, providing valuable insights for improving the user experience and tailoring personalized content.',
+      question: 'Why should businesses choose AItoXR over other providers?',
+      answer: 'AItoXR offers a blend of cutting-edge technologies, deep industry expertise, and a customer-first approach, ensuring innovative, scalable, and results-driven solutions tailored to each client’s needs.',
     },
   ];
 
@@ -77,7 +78,10 @@ const handleClick = (route: string) => {
           sizes="100vw"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 lg:gradient-l-r gradient-t-b clip-ellipse"
+        <div className="absolute inset-0 clip-ellipse"
+        style={{
+          background: 'linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.7) 51.3%, rgba(0, 0, 0, 0) 100%)',
+      }}
         ></div>
     </div>
 </div>
@@ -112,7 +116,7 @@ const handleClick = (route: string) => {
     </h1>
 
     {/* Paragraph 2 - Hidden on <1024px */}
-    <p className="hidden lg:block text-white font-normal text-[18px] sm:text-[20px] lg:text-[24px] mb-6 lg:w-[46rem]">
+    <p className="hidden lg:block text-white font-normal text-[18px] sm:text-[20px] lg:text-[20px] xl:text-[24px] mb-6 lg:w-[86%]  xl:w-[70%]">
       {paragraphText2}
     </p>
 

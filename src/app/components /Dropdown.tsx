@@ -80,11 +80,12 @@ const Dropdown: React.FC<DropdownProps> = ({
         description="Our software developers in your team."
       />
         <SubItemList
+        onClick={() => handleClick('/dedicated-teams')}
         heading="Dedicated Teams"
         description="Our software developers in your team."
       />
       <SubItemList
-        // onClick={handleClick}
+        onClick={() => handleClick('/software-outsourcing')}
         heading="Software Outsourcing"
         description="Our software developers in your team."
       />
